@@ -10,7 +10,7 @@
 
 ## Overview
 
-This portfolio was built as a personal project of mine. I use it for school and to showcase my work, skills, and additional information about myself to companies and clients.
+Love U Festival is an individual school project for a fictional company, named Love U. For this project we got the task to build a Progressive Web Application (PWA) for their festival-goers.
 
 1. Front-end (`/index.html`)
 
