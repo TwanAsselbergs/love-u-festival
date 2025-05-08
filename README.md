@@ -19,7 +19,7 @@ Love U Festival is an individual school project for a fictional company, named L
 
 2. API (`/docs`)
 
-   - Contains all the documents of this project
+   - Contains all the documents of this project.
 
 
 ## Author(s)
