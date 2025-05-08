@@ -10,7 +10,7 @@
 
 ## Overview
 
-Love U Festival is an individual school project for a fictional company, named Love U. For this project we got the task to build a Progressive Web Application (PWA) for their festival-goers.
+Love U Festival is an individual school project for a fictional company named Love U. For this project, we were tasked to build a Progressive Web Application (PWA) for their festival-goers.
 
 1. Front-end (`/svelte`)
 
