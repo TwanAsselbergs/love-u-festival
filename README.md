@@ -12,21 +12,14 @@
 
 Love U Festival is an individual school project for a fictional company, named Love U. For this project we got the task to build a Progressive Web Application (PWA) for their festival-goers.
 
-1. Front-end (`/index.html`)
+1. Front-end (`/svelte`)
 
-   - A user-friendly application designed for customers to browse products and place orders.
-   - Provides a seamless ordering experience on a touchscreen or kiosk.
+   - Serves as the front-end folder that uses Svelte as its framework.
+   - Utilizes Tailwind CSS and the Vite AWP Plugin.
 
-2. API (`/server`)
+2. API (`/docs`)
 
-   - Supplies product data to the front-end.
-   - Handles incoming orders by storing them in the database.
-   - Uses WebSockets to broadcast new orders to the dashboard in real time.
-
-3. Back-end (`/dashboard`)
-
-   - A dashboard accessible only to employees.
-   - Displays incoming orders and relevant statistics for order management.
+   - Contains all the documents of this project
 
 
 ## Author(s)
