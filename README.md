@@ -31,4 +31,4 @@ Love U Festival is an individual school project for a fictional company named Lo
 
 This project is licensed under the [MIT](LICENSE.md)
 License - see the [LICENSE](LICENSE) file for
-details
+details.
