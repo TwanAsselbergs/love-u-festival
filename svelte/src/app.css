@@ -1,1 +1,23 @@
 @import 'tailwindcss';
+
+body {
+	font-family: 'Sansation';
+}
+
+@font-face {
+	font-family: 'Sansation';
+	src: url('/fonts/Sansation-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@theme {
+	/* Vermilion: Voor knoppen en interactieve onderdelen */
+	--color-vermilion: #f03228;
+
+	/* Cerulean: Voor kopteksten */
+	--color-cerulean: #247ba0;
+
+	/* Saffron: Voor informatie of waarschuwingen */
+	--color-saffron: #e3b505;
+}
