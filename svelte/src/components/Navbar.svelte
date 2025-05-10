@@ -19,7 +19,7 @@
 </script>
 
 <div
-	class="fixed bottom-6 left-1/2 z-10 mx-auto flex w-[80%] max-w-md -translate-x-1/2 transform items-center justify-center gap-12 rounded-full bg-white pb-3 pt-4 shadow"
+	class="fixed bottom-6 left-1/2 z-10 mx-auto flex w-[80%] max-w-md -translate-x-1/2 transform items-center justify-center gap-12 rounded-full bg-white/75 pb-3 pt-4 shadow backdrop-blur dark:bg-gray-400"
 >
 	{#each navItems as navItem}
 		<a
