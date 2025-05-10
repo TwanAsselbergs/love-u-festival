@@ -32,6 +32,13 @@ export default defineConfig({
 						type: 'image/png',
 						purpose: 'any'
 					}
+				],
+				splash_pages: [
+					{
+						src: '/icons/logo-white.png',
+						sizes: '192x192',
+						type: 'image/png'
+					}
 				]
 			}
 		})
