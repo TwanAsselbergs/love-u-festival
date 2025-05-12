@@ -1,33 +1,54 @@
 <script>
 	import { page } from '$app/stores';
+	import { onMount, tick } from 'svelte';
 
 	const navItems = [
-		{ href: '/', icon: 'explore' },
-		{ href: '/schedule', icon: 'event' },
-		{ href: '/profile', icon: 'person' },
-		{ href: '/more', icon: 'more_horiz' }
+		{ href: '/', icon: 'explore', name: 'Map' },
+		{ href: '/events', icon: 'event', name: 'Events' },
+		{ href: '/profile', icon: 'person', name: 'Profile' },
+		{ href: '/more', icon: 'more_horiz', name: 'More' }
 	];
 
-	let clickedItem = null;
+	let itemRefs = new Array(navItems.length).fill(null);
+	let indicatorStyle = '';
 
-	function handleClick(navItem) {
-		clickedItem = navItem.href;
-		setTimeout(() => {
-			clickedItem = null;
-		}, 300);
+	async function updateIndicator() {
+		await tick();
+		const activeHref = $page.url.pathname;
+		const index = navItems.findIndex((item) => item.href === activeHref);
+		if (itemRefs[index]) {
+			const el = itemRefs[index];
+			const rect = el.getBoundingClientRect();
+			const parentRect = el.parentElement.getBoundingClientRect();
+			const left = rect.left - parentRect.left;
+			const width = rect.width;
+			indicatorStyle = `transform: translateX(${left}px); width: ${width}px;`;
+		}
 	}
+
+	$: $page.url.pathname, updateIndicator();
 </script>
 
-<div
-	class="fixed bottom-6 left-1/2 z-10 mx-auto flex w-[80%] max-w-md -translate-x-1/2 transform items-center justify-center gap-12 rounded-full bg-white/75 pb-3 pt-4 shadow backdrop-blur dark:bg-gray-400"
->
-	{#each navItems as navItem}
-		<a
-			href={navItem.href}
-			on:click={() => handleClick(navItem)}
-			class={`${$page.url.pathname === navItem.href ? 'text-vermilion' : ''} transition-transform duration-200 
-			${clickedItem === navItem.href ? 'scale-[108%]' : ''}`}
-			><i class="material-icons-round">{navItem.icon}</i></a
-		>
-	{/each}
+<div class="fixed bottom-6 left-1/2 z-10 w-[85%] max-w-md -translate-x-1/2 transform">
+	<div
+		class="absolute inset-0 -z-10 rounded-full bg-white/40 shadow saturate-200 backdrop-blur-lg dark:bg-black/40">
+	</div>
+
+	<div class="relative flex items-center justify-center rounded-full py-2.5">
+		<div
+			class="absolute left-0 h-[70%] rounded-3xl bg-white shadow-md transition-all duration-300 dark:bg-white/5"
+			style={indicatorStyle}>
+		</div>
+
+		{#each navItems as navItem, i}
+			<a
+				href={navItem.href}
+				bind:this={itemRefs[i]}
+				class={`w-18 relative z-10 flex flex-col items-center justify-center rounded-3xl py-1
+					${$page.url.pathname === navItem.href ? 'text-vermilion' : 'text-gray-500 dark:text-white/50'}`}>
+				<span class="material-icons-round">{navItem.icon}</span>
+				<p class="text-xs">{navItem.name}</p>
+			</a>
+		{/each}
+	</div>
 </div>
