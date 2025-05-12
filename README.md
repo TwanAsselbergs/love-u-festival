@@ -17,7 +17,7 @@ Love U Festival is an individual school project for a fictional company named Lo
    - Serves as the front-end folder that uses Svelte as its framework.
    - Utilizes Tailwind CSS and the Vite PWA Plugin.
 
-2. API (`/docs`)
+2. Documents (`/docs`)
 
    - Contains all the documents of this project.
 
