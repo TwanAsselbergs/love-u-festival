@@ -16,8 +16,8 @@ export default defineConfig({
 				name: 'Love U Festival',
 				short_name: 'LoveU',
 				description: 'A PWA for festival-goers',
-				theme_color: '#ffffff',
-				background_color: '#ffffff',
+				theme_color: '#f2f3f6',
+				background_color: '#f2f3f6',
 				display: 'standalone',
 				icons: [
 					{
