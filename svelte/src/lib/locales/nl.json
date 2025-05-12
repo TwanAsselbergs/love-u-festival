@@ -1,5 +1,46 @@
 {
-	"schedule": "Schema",
+	"map": "Map",
+
+	"events": "Evenementen",
+
 	"profile": "Profiel",
-	"more": "Meer"
+
+	"more": "Meer",
+
+	"contact": "Contact",
+	"contact_desc": "Hoe kunnen we je helpen? Bel of mail ons met je vraag, we zorgen voor een snel antwoord.",
+
+	"festival_info": "Festivalinformatie",
+	"festival_info_desc": "Het Love U Festival is voor (nieuwe) studenten in de regio Utrecht en is een aanvulling op de UIT.",
+	"opening_hours": "Openingstijden",
+	"opening_hours_desc": "Het festival opent op zaterdag 6 september 2025! Het begint om 12:00 uur en eindigt rond 23:00 uur, dus wees erbij!",
+	"opening_hours_tip": "Zet 'm in je agenda.",
+	"accessibility": "Toegankelijkheid",
+	"lockers": "Lockers",
+	"lockers_desc": "Op het festivalterrein zijn lockers aanwezig waar je je spullen veilig kunt opbergen! Hier passen 3 à 4 jassen in.",
+	"lockers_desc_2": "Goed om te weten: je kunt je locker gedurende de hele dag openen en sluiten zo vaak je wilt. Het is niet mogelijk om online een locker te reserveren.",
+
+	"faq": "Veelgestelde Vragen",
+	"medication": "Ik gebruik medicatie. Wat nu?",
+	"medication_desc": "Het is toegestaan om medicijnen mee te nemen in een dosis die je maximaal nodig hebt op één dag. Een doktersverklaring of medicatiepaspoort is noodzakelijk.",
+	"medication_desc_2": "De beveiliging zal jouw documentatie beoordelen en de medicijnen controleren. Het kan zijn dat de EHBO jouw medicijnen (bijvoorbeeld als deze gevaarlijk zijn i.c.m. alcohol) in bewaring neemt en je deze alleen bij de EHBO kunt innemen.",
+	"leave_festival": "Mag ik tussentijds weg?",
+	"leave_festival_desc": "Nee, helaas is dat niet mogelijk. Om de veiligheid van alle bezoekers te kunnen waarborgen, kunnen we het niet toestaan dat het festivalterrein tussentijds verlaten wordt. Wij hebben namelijk geen zicht op wat een bezoeker buiten het terrein doet en in welke staat deze terugkomt.",
+	"leave_festival_desc_2": "Hier kunnen dan ook geen uitzonderingen voor worden gemaakt. Wij hebben genoeg loungeplekken, foodstands en barren om het een hele dag uit te houden.",
+	"lockers_info": "Zijn er lockers?",
+	"lockers_info_desc": "Ja, deze zijn er! Op het terrein kun je medium en grote lockers huren.",
+
+	"settings_preferences": "Instellingen & Voorkeuren",
+	"preferences": "Voorkeuren",
+	"about_app": "Over de Love U Festival-app",
+
+	"version": "Love U Festival 0.0.1",
+
+	"about": "Over Onze App",
+	"app_version": "App-versie",
+	"rate_app": "Beoordeel de app",
+	"terms": "Juridische Informatie",
+	"terms_conditions": "Algemene voorwaarden",
+	"privacy_statement": "Privacyverklaring",
+	"licenses": "Licenties"
 }

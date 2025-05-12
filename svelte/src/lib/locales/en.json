@@ -1,5 +1,48 @@
 {
-	"schedule": "Schedule",
+	"map": "Map",
+
+	"events": "Events",
+
 	"profile": "Profile",
-	"more": "More"
+
+	"more": "More",
+
+	"contact": "Contact",
+	"contact_desc": "How can we help you? Call or email us with your question, and we'll make sure respond quickly.",
+	"call_us": "Call us",
+	"email_us": "Email us",
+
+	"festival_info": "Festival Information",
+	"festival_info_desc": "The Love U Festival is for (new) students in the Utrecht region and is a supplement to the UIT event.",
+	"opening_hours": "Opening Hours",
+	"opening_hours_desc": "The festival kicks off on Saturday, September 6th, 2025! It starts at 12:00 and ends around 23:00, so don’t miss it!",
+	"opening_hours_tip": "Mark it in your calendar.",
+	"accessibility": "Accessibility",
+	"lockers": "Lockers",
+	"lockers_desc": "Lockers are available on the festival grounds to safely store your belongings! They can fit 3 to 4 jackets.",
+	"lockers_desc_2": "Good to know: you can open and close your locker throughout the day as often as you like. It's not possible to reserve a locker online.",
+
+	"faq": "FAQs",
+	"medication": "I'm on medication. What now?",
+	"medication_desc": "You're allowed to bring medication in the amount you need for one day. A doctor’s note or medication passport is required.",
+	"medication_desc_2": "Security will review your documentation and check the medication. The medical team may store certain medications (especially those dangerous when combined with alcohol), and you can only take them there.",
+	"leave_festival": "Can I leave and re-enter?",
+	"leave_festival_desc": "Unfortunately, no. For safety reasons, re-entry is not allowed. We can’t monitor what visitors do outside the festival or in what state they return.",
+	"leave_festival_desc_2": "No exceptions will be made. We have plenty of lounge areas, food stands, and bars to enjoy the full day.",
+	"lockers_info": "Are lockers available?",
+	"lockers_info_desc": "Yes! You can rent medium and large lockers on-site.",
+
+	"settings_preferences": "Settings & Preferences",
+	"preferences": "Preferences",
+	"about_app": "About the Love U Festival app",
+
+	"version": "Love U Festival 0.0.1",
+
+	"about": "About Our App",
+	"app_version": "App Version",
+	"rate_app": "Rate the App",
+	"terms": "Legal Information",
+	"terms_conditions": "General Terms and Conditions",
+	"privacy_statement": "Privacy Statement",
+	"licenses": "Licenses"
 }
