@@ -4,6 +4,11 @@
 
 body {
 	font-family: 'Sansation';
+	background-color: #f2f3f6;
+}
+
+.dark body {
+	@apply bg-[#1d1d1e];
 }
 
 @font-face {
@@ -22,4 +27,8 @@ body {
 
 	/* Saffron: Voor informatie of waarschuwingen */
 	--color-saffron: #e3b505;
+
+	--color-gray2: #f2f3f6;
+
+	--color-gray3: #2d2c2f;
 }
