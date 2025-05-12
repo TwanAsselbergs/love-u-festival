@@ -1,102 +1,241 @@
 <script>
-	import LanguageSwitcher from '../../components/LanguageSwitcher.svelte';
 	import { t } from 'svelte-i18n';
 
-	let darkMode = false;
+	let openSection = null;
 
-	function toggleTheme() {
-		darkMode = !darkMode;
-		if (darkMode) {
-			document.documentElement.classList.add('dark');
-		} else {
-			document.documentElement.classList.remove('dark');
-		}
-	}
+	const toggleSection = (section) => {
+		openSection = openSection === section ? null : section;
+	};
+
+	const contactItems = [
+		{ href: 'tel:0655013388', icon: 'call', content: '(06) 55 01 33 88' },
+		{ href: 'mailto:info@loveufestival.com', icon: 'mail', content: 'info@loveufestival.com' }
+	];
 </script>
-
-<LanguageSwitcher />
 
 <main class="pb-30 flex flex-col items-center gap-6 px-6 pt-20">
 	<section class="flex w-full flex-col gap-4">
-		<h1 class="text-vermilion text-2xl font-extrabold">Contact</h1>
-		<p>How can we help you? Ask our digital colleague Pennenveer your question 24 hours a day.</p>
+		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">
+			{$t('contact')}
+		</h1>
+		<p class="text-gray-500">
+			{$t('contact_desc')}
+		</p>
 
-		<a href="tel:0655013388" class="border-vermilion text-vermilion border-1 rounded-2xl px-4 py-4">
-			<div class="flex gap-4">
-				<i class="material-icons-round">call</i>
-				<p class="text-black">(06) 55 01 33 88</p>
-			</div>
-		</a>
-
-		<a
-			href="mailto:info@loveufestival.com"
-			class="border-vermilion text-vermilion border-1 rounded-2xl px-4 py-4"
-		>
-			<div class="flex gap-4">
-				<i class="material-icons-round">mail</i>
-				<p class="text-black">info@loveufestival.com</p>
-			</div>
-		</a>
+		{#each contactItems as contactItem}
+			<a
+				href={contactItem.href}
+				class="text-vermilion dark:bg-gray3 rounded-2xl bg-white px-4 py-4">
+				<div class="flex gap-4">
+					<span class="material-icons-round">{contactItem.icon}</span>
+					<p>{contactItem.content}</p>
+				</div>
+			</a>
+		{/each}
 	</section>
 
 	<section class="flex w-full flex-col gap-4">
-		<h1 class="text-vermilion text-2xl font-extrabold">Practical Information</h1>
+		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">{$t('festival_info')}</h1>
+		<p class="text-gray-500">
+			{$t('festival_info_desc')}
+		</p>
 
 		<div class="flex w-full flex-col">
-			<button
-				class="border-vermilion text-vermilion border-1 rounded-2xl rounded-b-none border-b-0 px-4 py-4"
-			>
-				<div class="flex gap-4">
-					<i class="material-icons-round">schedule</i>
-					<p class="text-black">Opening hours</p>
+			<div class="dark:bg-gray3 rounded-t-2xl bg-white">
+				<button
+					on:click={() => toggleSection('openingHours')}
+					class="flex w-full items-center justify-between px-4 py-4">
+					<div class="flex items-center gap-4">
+						<span class="material-icons-round text-vermilion">schedule</span>
+						<p class="text-gray-900 dark:text-white/90">{$t('opening_hours')}</p>
+					</div>
+					<span
+						class="material-icons-round text-gray-300 transition-transform duration-300"
+						class:rotate-180={openSection === 'openingHours'}>
+						keyboard_arrow_down
+					</span>
+				</button>
+
+				<div
+					class="flex flex-col gap-4 overflow-hidden px-5 transition-all duration-500 ease-in-out"
+					style="max-height: {openSection === 'openingHours' ? '200px' : '0px'}">
+					<p class="text-gray-600 dark:text-white/70">
+						{$t('opening_hours_desc')}
+					</p>
+					<p class="pb-4 dark:text-white/90">
+						Tip: <a href="/ics/love-u-festival.ics" download class="text-cerulean underline">
+							{$t('opening_hours_tip')}
+						</a>
+					</p>
 				</div>
-			</button>
+			</div>
 
-			<div class="flex w-full flex-col">
+			<div class="dark:bg-gray3 bg-white">
 				<button
-					class="border-vermilion border-t-vermilion/10 border-b-vermilion/10 text-vermilion border-1 border-t-none border-b-none px-4 py-4"
-				>
-					<div class="flex gap-4">
-						<i class="material-icons-round">accessible</i>
-						<p class="text-black">Facilities for disabled visitors</p>
+					on:click={() => toggleSection('accessibility')}
+					class="border-1 flex w-full items-center justify-between border-l-0 border-r-0 border-gray-400/15 px-4 py-4">
+					<div class="flex items-center gap-4">
+						<span class="material-icons-round text-vermilion">pedal_bike</span>
+						<p class="text-gray-900 dark:text-white/90">{$t('accessibility')}</p>
 					</div>
+					<span
+						class="material-icons-round text-gray-300 transition-transform duration-300"
+						class:rotate-180={openSection === 'accessibility'}>
+						keyboard_arrow_down
+					</span>
 				</button>
 
+				<div
+					class="flex flex-col gap-4 overflow-hidden px-5 transition-all duration-500 ease-in-out"
+					style="max-height: {openSection === 'accessibility' ? '200px' : '0px'}">
+					<p class="pb-4 text-gray-600 dark:text-white/70">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis a voluptatem suscipit.
+					</p>
+				</div>
+			</div>
+
+			<div class="dark:bg-gray3 rounded-b-2xl bg-white">
 				<button
-					class="border-vermilion text-vermilion border-1 border-t-vermilion/10 rounded-2xl rounded-t-none px-4 py-4"
-				>
-					<div class="flex gap-4">
-						<i class="material-icons-round">badge</i>
-						<p class="text-black">Apply for a facility card</p>
+					on:click={() => toggleSection('lockers')}
+					class="flex w-full items-center justify-between px-4 py-4">
+					<div class="flex items-center gap-4">
+						<span class="material-icons-round text-vermilion">lock</span>
+						<p class="text-gray-900 dark:text-white/90">{$t('lockers')}</p>
 					</div>
+					<span
+						class="material-icons-round text-gray-300 transition-transform duration-300"
+						class:rotate-180={openSection === 'lockers'}>
+						keyboard_arrow_down
+					</span>
 				</button>
+
+				<div
+					class="flex flex-col gap-4 overflow-hidden px-5 transition-all duration-500 ease-in-out"
+					style="max-height: {openSection === 'lockers' ? '250px' : '0px'}">
+					<p class="pb-4 text-gray-600 dark:text-white/70">
+						{$t('lockers_desc')}
+						<br />
+						<br />
+						{$t('lockers_desc_2')}
+					</p>
+				</div>
 			</div>
 		</div>
 	</section>
 
 	<section class="flex w-full flex-col gap-4">
-		<h1 class="text-vermilion text-2xl font-extrabold">Settings & Preferences</h1>
+		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">{$t('faq')}</h1>
 
 		<div class="flex w-full flex-col">
-			<button
-				class="border-vermilion text-vermilion border-1 rounded-2xl rounded-b-none border-b-0 px-4 py-4"
-			>
-				<div class="flex gap-4">
-					<i class="material-icons-round">settings</i>
-					<p class="text-black">Preferences</p>
-				</div>
-			</button>
+			<div class="dark:bg-gray3 rounded-t-2xl bg-white">
+				<button
+					on:click={() => toggleSection('medication')}
+					class="flex w-full items-center justify-between px-4 py-4">
+					<div class="flex items-center gap-4">
+						<span class="material-icons-round text-vermilion">vaccines</span>
+						<p class="text-gray-900 dark:text-white/90">{$t('medication')}</p>
+					</div>
+					<span
+						class="material-icons-round text-gray-300 transition-transform duration-300"
+						class:rotate-180={openSection === 'medication'}>
+						keyboard_arrow_down
+					</span>
+				</button>
 
-			<button
-				class="border-vermilion text-vermilion border-1 border-t-vermilion/10 rounded-2xl rounded-t-none px-4 py-4"
-			>
-				<div class="flex gap-4">
-					<i class="material-icons-round">info</i>
-					<p class="text-black">About the Love U Festival app</p>
+				<div
+					class="flex flex-col gap-4 overflow-hidden px-5 transition-all duration-700 ease-in-out"
+					style="max-height: {openSection === 'medication' ? '500px' : '0px'}">
+					<p class="pb-4 text-gray-600 dark:text-white/70">
+						{$t('medication_desc')}
+						<br />
+						<br />
+						{$t('medication_desc_2')}
+					</p>
 				</div>
-			</button>
+			</div>
+
+			<div class="dark:bg-gray3 bg-white">
+				<button
+					on:click={() => toggleSection('leaveFestival')}
+					class="border-1 flex w-full items-center justify-between border-l-0 border-r-0 border-gray-400/15 px-4 py-4">
+					<div class="flex items-center gap-4">
+						<span class="material-icons-round text-vermilion">outbound</span>
+						<p class="text-gray-900 dark:text-white/90">{$t('leave_festival')}</p>
+					</div>
+					<span
+						class="material-icons-round text-gray-300 transition-transform duration-300"
+						class:rotate-180={openSection === 'leaveFestival'}>
+						keyboard_arrow_down
+					</span>
+				</button>
+
+				<div
+					class="flex flex-col gap-4 overflow-hidden px-5 transition-all duration-500 ease-in-out"
+					style="max-height: {openSection === 'leaveFestival' ? '400px' : '0px'}">
+					<p class="pb-4 text-gray-600 dark:text-white/70">
+						{$t('leave_festival_desc')}
+						<br />
+						<br />
+						{$t('leave_festival_desc_2')}
+					</p>
+				</div>
+			</div>
+
+			<div class="dark:bg-gray3 rounded-b-2xl bg-white">
+				<button
+					on:click={() => toggleSection('faqLockers')}
+					class="flex w-full items-center justify-between px-4 py-4">
+					<div class="flex items-center gap-4">
+						<span class="material-icons-round text-vermilion">lock</span>
+						<p class="text-gray-900 dark:text-white/90">{$t('lockers_info')}</p>
+					</div>
+					<span
+						class="material-icons-round text-gray-300 transition-transform duration-300"
+						class:rotate-180={openSection === 'faqLockers'}>
+						keyboard_arrow_down
+					</span>
+				</button>
+
+				<div
+					class="flex flex-col gap-4 overflow-hidden px-5 transition-all duration-500 ease-in-out"
+					style="max-height: {openSection === 'faqLockers' ? '250px' : '0px'}">
+					<p class="pb-4 text-gray-600 dark:text-white/70">
+						{$t('lockers_info_desc')}
+					</p>
+				</div>
+			</div>
 		</div>
 	</section>
 
-	<button on:click={toggleTheme}>{darkMode ? 'Light Mode' : 'Dark Mode'}</button>
+	<section class="flex w-full flex-col gap-4">
+		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">
+			{$t('settings_preferences')}
+		</h1>
+
+		<div class="flex w-full flex-col">
+			<a href="/more/preferences" class="dark:bg-gray3 rounded-t-2xl bg-white px-4 py-4">
+				<div class="relative flex gap-4">
+					<span class="material-icons-round text-vermilion">settings</span>
+					<p class="text-gray-900 dark:text-white/90">{$t('preferences')}</p>
+					<span class="material-icons-round absolute right-0 text-gray-300">
+						keyboard_arrow_right
+					</span>
+				</div>
+			</a>
+
+			<a
+				href="/more/about"
+				class="border-1 dark:bg-gray3 rounded-b-2xl border-b-0 border-l-0 border-r-0 border-gray-400/15 bg-white px-4 py-4">
+				<div class="relative flex gap-4">
+					<span class="material-icons-round text-vermilion">info</span>
+					<p class="text-gray-900 dark:text-white/90">{$t('about_app')}</p>
+					<span class="material-icons-round absolute right-0 text-gray-300">
+						keyboard_arrow_right
+					</span>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<p class="text-xs font-extralight text-gray-400">❤️ U Festival 0.0.1</p>
 </main>
