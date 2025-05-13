@@ -29,12 +29,24 @@
 	"leave_festival_desc_2": "Hier kunnen dan ook geen uitzonderingen voor worden gemaakt. Wij hebben genoeg loungeplekken, foodstands en barren om het een hele dag uit te houden.",
 	"lockers_info": "Zijn er lockers?",
 	"lockers_info_desc": "Ja, deze zijn er! Op het terrein kun je medium en grote lockers huren.",
+	"golden_glu_info": "Golden GLU",
+	"golden_glu_info_desc": "Studenten van het GLU hebben tijdens het festival speciale privileges en zijn herkenbaar aan een gouden armbandje.",
+	"golden_glu_info_desc_2": "Met dit gouden armbandje kunnen ze tijdens het festival gebruik maken van de gouden toiletten en met goud gemarkeerde bestelpunten aan de bars zonder in een rij te hoeven staan.",
 
 	"settings_preferences": "Instellingen & Voorkeuren",
 	"preferences": "Voorkeuren",
 	"about_app": "Over de Love U Festival-app",
 
 	"version": "Love U Festival 0.0.1",
+
+	"notifications": "Meldingen",
+	"tips_promotions": "Meldingen",
+	"tips_promotions_desc": "Je ontvangt meldingen met tips en promoties tijdens je bezoek.",
+	"surveys": "Vragenlijsten",
+	"surveys_desc": "Help ons door je ervaring met ons te delen.",
+	"email_noti": "E-mailmeldingen",
+	"theme": "Thema",
+	"dark_mode": "Donkere modus",
 
 	"about": "Over Onze App",
 	"app_version": "App-versie",

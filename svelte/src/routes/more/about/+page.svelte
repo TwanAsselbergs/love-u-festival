@@ -4,7 +4,7 @@
 
 <main class="pb-30 flex flex-col items-center gap-6 px-6 pt-20">
 	<section class="flex w-full flex-col gap-4">
-		<h1 class="text-2xl font-extrabold text-gray-800">{$t('about')}</h1>
+		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">{$t('about')}</h1>
 		<div class="dark:bg-gray3 rounded-2xl bg-white px-4 py-4">
 			<div class="relative flex gap-4">
 				<span class="material-icons-round text-vermilion">settings</span>

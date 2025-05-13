@@ -31,15 +31,15 @@
 
 <main class="pb-30 flex flex-col items-center gap-6 px-6 pt-20">
 	<section class="flex w-full flex-col gap-4">
-		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">Notifications</h1>
+		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">{$t('notifications')}</h1>
 
 		<div class="flex w-full flex-col">
 			<div class="dark:bg-gray3 rounded-t-2xl bg-white px-4 py-4">
 				<div class="relative flex items-center justify-between gap-4">
 					<div class="flex flex-col">
-						<p class="text-gray-900 dark:text-white/90">Tips and Promotions</p>
+						<p class="text-gray-900 dark:text-white/90">{$t('tips_promotions')}</p>
 						<p class="pl-0.5 pt-1 text-sm text-gray-500 dark:text-white/90">
-							You will receive notifications with tips and promotions during your visit.
+							{$t('tips_promotions_desc')}
 						</p>
 					</div>
 
@@ -59,9 +59,9 @@
 				class="border-1 dark:bg-gray3 border-l-0 border-r-0 border-gray-400/15 bg-white px-4 py-4">
 				<div class="relative flex items-center justify-between gap-4">
 					<div class="flex flex-col">
-						<p class="text-gray-900 dark:text-white/90">Surveys</p>
+						<p class="text-gray-900 dark:text-white/90">{$t('surveys')}</p>
 						<p class="pl-0.5 pt-1 text-sm text-gray-500 dark:text-white/90">
-							Help us by telling us about your experience.
+							{$t('surveys_desc')}
 						</p>
 					</div>
 
@@ -79,7 +79,7 @@
 
 			<div class="dark:bg-gray3 rounded-b-2xl bg-white px-4 py-4">
 				<div class="relative flex gap-4">
-					<p class="text-gray-900 dark:text-white/90">E-mail notifications</p>
+					<p class="text-gray-900 dark:text-white/90">{$t('email_noti')}</p>
 					<span class="material-icons-round absolute right-0 text-gray-300">
 						keyboard_arrow_right
 					</span>
@@ -89,11 +89,11 @@
 	</section>
 
 	<section class="flex w-full flex-col gap-4">
-		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">Theme</h1>
+		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">{$t('theme')}</h1>
 		<div class="dark:bg-gray3 rounded-2xl bg-white px-4 py-4">
 			<div class="relative flex items-start gap-4">
 				<span class="material-icons-round text-vermilion">contrast</span>
-				<p class="text-gray-900 dark:text-white/90">Dark Mode</p>
+				<p class="text-gray-900 dark:text-white/90">{$t('dark_mode')}</p>
 				<label class="absolute right-0 inline-flex cursor-pointer items-center">
 					<input
 						on:click={toggleTheme}

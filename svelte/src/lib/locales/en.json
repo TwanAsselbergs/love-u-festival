@@ -31,12 +31,24 @@
 	"leave_festival_desc_2": "No exceptions will be made. We have plenty of lounge areas, food stands, and bars to enjoy the full day.",
 	"lockers_info": "Are lockers available?",
 	"lockers_info_desc": "Yes! You can rent medium and large lockers on-site.",
+	"golden_glu_info": "Golden GLU",
+	"golden_glu_info_desc": "Students from GLU have special privileges during the festival and can be recognized by a golden wristband.",
+	"golden_glu_info_desc_2": "With this golden wristband, they can use the golden toilets and the gold-marked order points at the bars without having to wait in line.",
 
 	"settings_preferences": "Settings & Preferences",
 	"preferences": "Preferences",
 	"about_app": "About the Love U Festival app",
 
 	"version": "Love U Festival 0.0.1",
+
+	"notifications": "Notifications",
+	"tips_promotions": "Notifications",
+	"tips_promotions_desc": "You will receive notifications with tips and promotions during your visit.",
+	"surveys": "Surveys",
+	"surveys_desc": "Help us by telling us about your experience.",
+	"email_noti": "E-mail notifications",
+	"theme": "Theme",
+	"dark_mode": "Dark Mode",
 
 	"about": "About Our App",
 	"app_version": "App Version",
