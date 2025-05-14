@@ -15,7 +15,7 @@
 
 <main class="pb-30 flex flex-col items-center gap-6 px-6 pt-20">
 	<section class="flex w-full flex-col gap-4">
-		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">
+		<h1 class="sansation-bold text-2xl text-gray-800 dark:text-white/90">
 			{$t('contact')}
 		</h1>
 		<p class="text-gray-500">
@@ -25,7 +25,7 @@
 		{#each contactItems as contactItem}
 			<a
 				href={contactItem.href}
-				class="text-vermilion dark:bg-gray3 rounded-2xl bg-white px-4 py-4">
+				class="text-vermilion dark:bg-gray3 rounded-full bg-white px-4 py-4">
 				<div class="flex gap-4">
 					<span class="material-icons-round">{contactItem.icon}</span>
 					<p>{contactItem.content}</p>
@@ -35,7 +35,7 @@
 	</section>
 
 	<section class="flex w-full flex-col gap-4">
-		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">{$t('festival_info')}</h1>
+		<h1 class="sansation-bold text-2xl text-gray-800 dark:text-white/90">{$t('festival_info')}</h1>
 		<p class="text-gray-500">
 			{$t('festival_info_desc')}
 		</p>
@@ -151,7 +151,7 @@
 	</section>
 
 	<section class="flex w-full flex-col gap-4">
-		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">{$t('faq')}</h1>
+		<h1 class="sansation-bold text-2xl text-gray-800 dark:text-white/90">{$t('faq')}</h1>
 
 		<div class="flex w-full flex-col">
 			<div class="dark:bg-gray3 rounded-t-2xl bg-white">
@@ -235,7 +235,7 @@
 	</section>
 
 	<section class="flex w-full flex-col gap-4">
-		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">
+		<h1 class="sansation-bold text-2xl text-gray-800 dark:text-white/90">
 			{$t('settings_preferences')}
 		</h1>
 

@@ -31,12 +31,12 @@
 
 <main class="pb-30 flex flex-col items-center gap-6 px-6 pt-20">
 	<section class="flex w-full flex-col gap-4">
-		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">{$t('notifications')}</h1>
+		<h1 class="sansation-bold text-2xl text-gray-800 dark:text-white/90">{$t('notifications')}</h1>
 
 		<div class="flex w-full flex-col">
 			<div class="dark:bg-gray3 rounded-t-2xl bg-white px-4 py-4">
 				<div class="relative flex items-center justify-between gap-4">
-					<div class="flex flex-col">
+					<div class="flex-col">
 						<p class="text-gray-900 dark:text-white/90">{$t('tips_promotions')}</p>
 						<p class="pl-0.5 pt-1 text-sm text-gray-500 dark:text-white/90">
 							{$t('tips_promotions_desc')}
@@ -58,7 +58,7 @@
 			<div
 				class="border-1 dark:bg-gray3 border-l-0 border-r-0 border-gray-400/15 bg-white px-4 py-4">
 				<div class="relative flex items-center justify-between gap-4">
-					<div class="flex flex-col">
+					<div class="flex-col">
 						<p class="text-gray-900 dark:text-white/90">{$t('surveys')}</p>
 						<p class="pl-0.5 pt-1 text-sm text-gray-500 dark:text-white/90">
 							{$t('surveys_desc')}
@@ -89,7 +89,7 @@
 	</section>
 
 	<section class="flex w-full flex-col gap-4">
-		<h1 class="text-2xl font-extrabold text-gray-800 dark:text-white/90">{$t('theme')}</h1>
+		<h1 class="sansation-bold text-2xl text-gray-800 dark:text-white/90">{$t('theme')}</h1>
 		<div class="dark:bg-gray3 rounded-2xl bg-white px-4 py-4">
 			<div class="relative flex items-start gap-4">
 				<span class="material-icons-round text-vermilion">contrast</span>
