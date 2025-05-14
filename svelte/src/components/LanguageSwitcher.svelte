@@ -24,7 +24,7 @@
 	});
 </script>
 
-<div class="absolute right-5 top-5 z-20">
+<div class="right-5.5 absolute top-5 z-20 pr-[0.5px]">
 	<button class="flex items-center gap-2 rounded p-2" on:click={() => (isOpen = !isOpen)}>
 		<img src={`/img/flags/${currentLang}.png`} alt={currentLang} class="h-6" />
 	</button>
@@ -32,7 +32,7 @@
 
 {#if isOpen}
 	<div
-		class="top-13 dark:bg-gray3 absolute right-5 z-20 mt-2 w-40 rounded-3xl bg-white/40 shadow backdrop-blur-lg dark:text-white/90"
+		class="top-13 dark:bg-gray3 absolute right-5 z-20 mt-2 w-40 rounded-3xl bg-white/60 shadow backdrop-blur-lg dark:text-white/90"
 		transition:slide={{ duration: 300 }}>
 		<button
 			class="pb- flex w-full items-center gap-3 px-4 py-4 text-left"
