@@ -14,8 +14,8 @@ export default defineConfig({
 			},
 			manifest: {
 				name: 'Love U Festival',
-				short_name: 'LoveU',
-				description: 'A PWA for festival-goers',
+				short_name: 'Love U Festival',
+				description: 'Love U Festival is an app for its festival-goers.',
 				theme_color: '#f2f3f6',
 				background_color: '#f2f3f6',
 				display: 'standalone',
