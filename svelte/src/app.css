@@ -1,7 +1,5 @@
 @import 'tailwindcss';
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 body {
 	font-family: 'Sansation';
 	background-color: #f2f3f6;
@@ -11,6 +9,8 @@ body {
 	@apply bg-[#1d1d1e];
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @font-face {
 	font-family: 'Sansation';
 	src: url('/fonts/Sansation-Regular.ttf') format('truetype');
@@ -18,14 +18,32 @@ body {
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'SansationBold';
+	src: url('/fonts/Sansation-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: bold;
+}
+
+@layer utilities {
+	.sansation-bold {
+		font-family: 'SansationBold';
+		font-weight: bold;
+	}
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+}
+
 @theme {
-	/* Vermilion: Voor knoppen en interactieve onderdelen */
 	--color-vermilion: #f03228;
 
-	/* Cerulean: Voor kopteksten */
 	--color-cerulean: #247ba0;
 
-	/* Saffron: Voor informatie of waarschuwingen */
 	--color-saffron: #e3b505;
 
 	--color-gray2: #f2f3f6;
