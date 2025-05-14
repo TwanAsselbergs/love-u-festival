@@ -1,0 +1,56 @@
+[
+	{
+		"img": "/img/artists/armin-van-buuren.png",
+		"song": "Trance Legacy",
+		"artist": "Armin van Buuren",
+		"date": "September 6, 12:00 uur"
+	},
+	{
+		"img": "/img/artists/martin-garrix.png",
+		"song": "Animals",
+		"artist": "Martin Garrix",
+		"date": "September 6, 12:30 uur"
+	},
+	{
+		"img": "/img/artists/kensington.png",
+		"song": "Riddles",
+		"artist": "Kensington",
+		"date": "September 6, 13:00 uur"
+	},
+	{
+		"img": "/img/artists/within-temptation.png",
+		"song": "Ice Queen",
+		"artist": "Within Temptation",
+		"date": "September 6, 13:30 uur"
+	},
+	{
+		"img": "/img/artists/de-staat.png",
+		"song": "Witch Doctor",
+		"artist": "De Staat",
+		"date": "September 6, 14:00 uur"
+	},
+	{
+		"img": "/img/artists/chef-special.png",
+		"song": "Amigo",
+		"artist": "Chef’Special",
+		"date": "September 6, 14:30 uur"
+	},
+	{
+		"img": "/img/artists/navarone.png",
+		"song": "Loud and Clear",
+		"artist": "Navarone",
+		"date": "September 6, 15:00 uur"
+	},
+	{
+		"img": "/img/artists/eefje-de-visser.png",
+		"song": "Ongeveer",
+		"artist": "Eefje de Visser",
+		"date": "September 6, 16:00 uur"
+	},
+	{
+		"img": "/img/artists/froukje.png",
+		"song": "Groter Dan Ik",
+		"artist": "Froukje",
+		"date": "September 6, 16:30 uur"
+	}
+]

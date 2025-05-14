@@ -1,0 +1,26 @@
+[
+	{
+		"img": "/img/placeholder-1.jpg",
+		"song": "Poton",
+		"artist": "Main Stage, Hoofdacts",
+		"spotify": "https://open.spotify.com/"
+	},
+	{
+		"img": "/img/placeholder-2.jpg",
+		"song": "The Lake",
+		"artist": "Onbekend Talent",
+		"spotify": "https://open.spotify.com/"
+	},
+	{
+		"img": "/img/placeholder-3.jpg",
+		"song": "The Club",
+		"artist": "Theater & Stand-Up Comedy",
+		"spotify": "https://open.spotify.com/"
+	},
+	{
+		"img": "/img/placeholder-3.jpg",
+		"song": "Hanggar",
+		"artist": "Non-Stop House, Techno & Dance",
+		"spotify": "https://open.spotify.com/"
+	}
+]
