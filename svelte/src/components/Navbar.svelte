@@ -3,9 +3,9 @@
 	import { onMount, tick } from 'svelte';
 
 	const navItems = [
-		{ href: '/', icon: 'explore', name: 'Map' },
+		{ href: '/', icon: 'home', name: 'Home' },
+		{ href: '/map', icon: 'explore', name: 'Map' },
 		{ href: '/events', icon: 'event', name: 'Events' },
-		{ href: '/profile', icon: 'person', name: 'Profile' },
 		{ href: '/more', icon: 'more_horiz', name: 'More' }
 	];
 
@@ -29,14 +29,14 @@
 	$: $page.url.pathname, updateIndicator();
 </script>
 
-<div class="fixed bottom-6 left-1/2 z-10 w-[85%] max-w-md -translate-x-1/2 transform">
+<div class="fixed bottom-6 left-1/2 z-10 w-[85%] max-w-[20rem] -translate-x-1/2 transform">
 	<div
-		class="absolute inset-0 -z-10 rounded-full bg-white/40 shadow saturate-200 backdrop-blur-lg dark:bg-black/40">
+		class="absolute inset-0 -z-10 rounded-full bg-white/60 shadow saturate-200 backdrop-blur-lg dark:bg-black/60">
 	</div>
 
 	<div class="relative flex items-center justify-center rounded-full py-2.5">
 		<div
-			class="absolute left-0 h-[70%] rounded-3xl bg-white shadow-md transition-all duration-300 dark:bg-white/5"
+			class="absolute left-0 h-[70%] rounded-full bg-white shadow-md transition-all duration-300 dark:bg-white/5"
 			style={indicatorStyle}>
 		</div>
 
@@ -44,7 +44,7 @@
 			<a
 				href={navItem.href}
 				bind:this={itemRefs[i]}
-				class={`w-18 relative z-10 flex flex-col items-center justify-center rounded-3xl py-1
+				class={`w-18 relative z-10 flex flex-col items-center justify-center rounded-full py-1
 					${$page.url.pathname === navItem.href ? 'text-vermilion' : 'text-gray-500 dark:text-white/50'}`}>
 				<span class="material-icons-round">{navItem.icon}</span>
 				<p class="text-xs">{navItem.name}</p>
