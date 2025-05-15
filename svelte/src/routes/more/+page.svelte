@@ -1,16 +1,23 @@
 <script>
+	import { fly } from 'svelte/transition';
 	import { t } from 'svelte-i18n';
+	import accessibilities from '../../data/accessibilities.json';
+	import contacts from '../../data/contacts.json';
 
 	let openSection = null;
+	let selectedAccessibility = null;
+
+	const openModal = (accessibility) => {
+		selectedAccessibility = accessibility;
+	};
+
+	const closeModal = () => {
+		selectedAccessibility = null;
+	};
 
 	const toggleSection = (section) => {
 		openSection = openSection === section ? null : section;
 	};
-
-	const contactItems = [
-		{ href: 'tel:0655013388', icon: 'call', content: '(06) 55 01 33 88' },
-		{ href: 'mailto:info@loveufestival.com', icon: 'mail', content: 'info@loveufestival.com' }
-	];
 </script>
 
 <main class="pb-30 flex flex-col items-center gap-6 px-6 pt-20">
@@ -22,13 +29,11 @@
 			{$t('contact_desc')}
 		</p>
 
-		{#each contactItems as contactItem}
-			<a
-				href={contactItem.href}
-				class="text-vermilion dark:bg-gray3 rounded-full bg-white px-4 py-4">
+		{#each contacts as contact}
+			<a href={contact.href} class="text-vermilion dark:bg-gray3 rounded-full bg-white px-4 py-4">
 				<div class="flex gap-4">
-					<span class="material-icons-round">{contactItem.icon}</span>
-					<p>{contactItem.content}</p>
+					<span class="material-icons-round">{contact.icon}</span>
+					<p>{contact.content}</p>
 				</div>
 			</a>
 		{/each}
@@ -87,10 +92,22 @@
 
 				<div
 					class="flex flex-col gap-4 overflow-hidden px-5 transition-all duration-500 ease-in-out"
-					style="max-height: {openSection === 'accessibility' ? '200px' : '0px'}">
-					<p class="pb-4 text-gray-600 dark:text-white/70">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis a voluptatem suscipit.
+					style="max-height: {openSection === 'accessibility' ? '300px' : '0px'}">
+					<p class="pb-2 text-gray-600 dark:text-white/70">
+						Met welk vervoer ben je van plan te komen?
 					</p>
+					<div class="grid grid-cols-3 justify-items-center gap-12 px-4 pb-6">
+						{#each accessibilities as accessibility}
+							<button
+								on:click={() => openModal(accessibility)}
+								class="flex flex-col items-center gap-2 focus:outline-none">
+								<span class="material-icons-round text-vermilion scale-150">
+									{accessibility.icon}
+								</span>
+								<p>{accessibility.title}</p>
+							</button>
+						{/each}
+					</div>
 				</div>
 			</div>
 
@@ -126,7 +143,7 @@
 					on:click={() => toggleSection('lockers')}
 					class="border-t-1 flex w-full items-center justify-between border-gray-400/15 px-4 py-4">
 					<div class="flex items-center gap-4">
-						<span class="material-icons-round text-vermilion">workspace_premium</span>
+						<span class="material-icons-round text-saffron">workspace_premium</span>
 						<p class="text-gray-900 dark:text-white/90">{$t('golden_glu_info')}</p>
 					</div>
 					<span
@@ -265,4 +282,27 @@
 	</section>
 
 	<p class="text-xs font-extralight text-gray-400">❤️ U Festival 0.0.1</p>
+
+	<div
+		class="fixed inset-0 z-40 bg-black transition-opacity duration-500 ease-in-out"
+		class:opacity-20={selectedAccessibility}
+		class:opacity-0={!selectedAccessibility}
+		class:pointer-events-none={!selectedAccessibility}>
+	</div>
+	{#if selectedAccessibility}
+		<div
+			class="fixed inset-0 z-50 flex items-center justify-center"
+			transition:fly={{ x: 0, y: 800, duration: 500, opacity: 1 }}>
+			<div class="flex h-64 w-4/5 flex-col gap-2 overflow-y-auto rounded-3xl bg-white p-5 shadow">
+				<div class="flex gap-4">
+					<span class="material-icons-round text-vermilion">{selectedAccessibility.icon}</span>
+					<h2 class="">{selectedAccessibility.title}</h2>
+				</div>
+				<p class="">{selectedAccessibility.desc}</p>
+				<div class="mt-4 flex justify-end">
+					<button on:click={closeModal} class="">x</button>
+				</div>
+			</div>
+		</div>
+	{/if}
 </main>
