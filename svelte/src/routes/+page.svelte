@@ -57,5 +57,13 @@
 				</div>
 			</div>
 		{/each}
+		<div class="flex justify-center">
+			<a href="/events" class="rounded-full pt-2">
+				<p class="flex items-center rounded-full bg-gray-200 py-1 pl-4 pr-1 text-sm text-gray-400">
+					Lees meer
+					<span class="material-icons-round scale-85">keyboard_arrow_right</span>
+				</p>
+			</a>
+		</div>
 	</section>
 </main>
