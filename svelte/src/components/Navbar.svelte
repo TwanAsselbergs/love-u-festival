@@ -26,6 +26,14 @@
 		}
 	}
 
+	function isActive(navItem) {
+		const path = $page.url.pathname;
+		if (navItem.href === '/more') {
+			return path === '/more' || path.startsWith('/more/');
+		}
+		return path === navItem.href;
+	}
+
 	$: $page.url.pathname, updateIndicator();
 </script>
 
@@ -45,7 +53,7 @@
 				href={navItem.href}
 				bind:this={itemRefs[i]}
 				class={`w-18 relative z-10 flex flex-col items-center justify-center rounded-full py-1
-					${$page.url.pathname === navItem.href ? 'text-vermilion' : 'text-gray-500 dark:text-white/50'}`}>
+            ${isActive(navItem) ? 'text-vermilion' : 'text-gray-500 dark:text-white/50'}`}>
 				<span class="material-icons-round">{navItem.icon}</span>
 				<p class="text-xs">{navItem.name}</p>
 			</a>
