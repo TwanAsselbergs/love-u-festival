@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { t } from 'svelte-i18n';
+	import BackButton from '../../../components/BackButton.svelte';
 
 	let tipsEnabled = false;
 	let surveysEnabled = false;
@@ -110,4 +111,5 @@
 			</div>
 		</div>
 	</section>
+	<BackButton />
 </main>
