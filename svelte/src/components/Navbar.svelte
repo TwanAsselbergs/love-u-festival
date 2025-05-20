@@ -4,8 +4,8 @@
 
 	const navItems = [
 		{ href: '/', icon: 'home', name: 'Home' },
-		{ href: '/map', icon: 'explore', name: 'Map' },
 		{ href: '/events', icon: 'event', name: 'Events' },
+		{ href: '/map', icon: 'explore', name: 'Map' },
 		{ href: '/more', icon: 'more_horiz', name: 'More' }
 	];
 
