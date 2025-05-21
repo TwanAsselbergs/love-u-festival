@@ -1,65 +1,54 @@
 <script>
 	import artists from '../../data/artists.json';
 
-	const stages = ['Main Stage', 'The Lake', 'The Club', 'Hangar'];
-	const timeSlots = [
-		'12:00',
-		'12:15',
-		'12:30',
-		'12:45',
-		'13:00',
-		'13:15',
-		'13:30',
-		'13:45',
-		'14:00',
-		'14:15',
-		'14:30',
-		'14:45',
-		'15:00',
-		'15:15',
-		'15:30',
-		'15:45',
-		'16:00',
-		'16:15',
-		'16:30',
-		'16:45',
-		'17:00'
-	];
+	const stages = ['Poton', 'The Lake', 'The Club', 'Hangar'];
+	const timeSlots = [];
+
+	for (let hour = 10; hour <= 23; hour++) {
+		for (let min = 0; min < 60; min += 15) {
+			const h = hour.toString().padStart(2, '0');
+			const m = min.toString().padStart(2, '0');
+			timeSlots.push(`${h}:${m}`);
+		}
+	}
 
 	function timeToMinutes(time) {
 		const [h, m] = time.split(':').map(Number);
 		return h * 60 + m;
 	}
 
-	const slotWidth = 120;
+	const slotWidth = 60;
 	const rowHeight = 80;
-	const timeColWidth = slotWidth;
+	const timeColWidth = 100;
 
-	function getArtistStyle(artist) {
+	let selectedDay = 'sat';
+	$: filteredArtists = artists.filter((a) => a.day === selectedDay);
+
+	function getHorizontalArtistStyle(artist) {
 		const stageIdx = stages.indexOf(artist.stage);
-		const firstSlotMinutes = timeToMinutes(timeSlots[0]);
 		const startMinutes = timeToMinutes(artist.start);
 		const endMinutes = timeToMinutes(artist.end);
+		const firstSlotMinutes = timeToMinutes(timeSlots[0]);
 
 		if (stageIdx === -1 || isNaN(startMinutes) || isNaN(endMinutes)) return 'display:none';
 
-		const top = ((startMinutes - firstSlotMinutes) / 15) * rowHeight + 40;
-		const left = timeColWidth + stageIdx * slotWidth + slotWidth / 2 - slotWidth / 2;
-		const width = slotWidth;
-		const height = ((endMinutes - startMinutes) / 15) * rowHeight;
-		const minHeight = 24;
+		const top = stageIdx * rowHeight;
+		const left = ((startMinutes - firstSlotMinutes) / 15) * slotWidth;
+		const width = ((endMinutes - startMinutes) / 15) * slotWidth;
+		const minWidth = 40;
+
 		return `
-      top: ${top}px;
-      left: ${left}px;
-      width: ${width}px;
-      height: ${Math.max(height, minHeight)}px;
-      opacity: 0.95;
+        top: ${top}px;
+        left: ${left}px;
+        width: ${Math.max(width, minWidth)}px;
+        height: ${rowHeight - 10}px;
+        opacity: 0.95;
     `;
 	}
 
 	function getStageBg(stage) {
 		switch (stage) {
-			case 'Main Stage':
+			case 'Poton':
 				return 'bg-vermilion';
 			case 'The Lake':
 				return 'bg-cerulean';
@@ -71,14 +60,14 @@
 	}
 </script>
 
-<main class="pb-30 flex flex-col items-center gap-6 px-6 pt-20">
+<main class="pb-30 flex flex-col gap-6 px-6 pt-20">
 	<section class="flex w-full justify-between gap-4">
 		<div class="bg-vermilion w-50 flex items-center justify-center gap-1.5 rounded-full p-1.5">
 			<span class="material-icons-round text-white">location_on</span>
 			<p class="mr-1 text-sm font-extrabold text-white">Strijkviertel, Utrecht</p>
 		</div>
 		<img
-			src="/img/logo-white-transparent.png"
+			src="/img/logos/logo-white-transparent.png"
 			alt="Logo"
 			class="h-10 w-10 rounded-full object-cover pl-0.5" />
 	</section>
@@ -88,39 +77,73 @@
 		<h1 class="sansation-bold text-xl">Events</h1>
 	</section>
 
+	<section class="mb-2 flex gap-4">
+		<button
+			class="sansation-bold rounded-full px-4 py-2 text-sm font-bold text-white"
+			class:bg-vermilion={selectedDay === 'sat'}
+			class:text-white={selectedDay === 'sat'}
+			on:click={() => (selectedDay = 'sat')}>
+			Saturday
+		</button>
+		<button
+			class="sansation-bold rounded-full px-4 py-2 text-sm font-bold text-white"
+			class:bg-vermilion={selectedDay === 'sun'}
+			class:text-white={selectedDay === 'sun'}
+			on:click={() => (selectedDay = 'sun')}>
+			Sunday
+		</button>
+	</section>
+
 	<section class="hide-scrollbar w-full overflow-x-auto overflow-y-hidden">
-		<div class="relative min-w-[600px]">
-			<table class="w-full">
-				<thead>
-					<tr>
-						<th class="bg-gray-100 p-2 text-left">Time</th>
-						{#each stages as stage}
-							<th class="bg-gray-100">{stage}</th>
-						{/each}
-					</tr>
-				</thead>
-				<tbody>
-					{#each timeSlots as time}
-						<tr style="height: {rowHeight}px;">
-							<td class="align-top font-bold">{time}</td>
-							{#each stages as stage}
-								<td class="border-b border-t border-gray-400/25 p-5 align-top"></td>
-							{/each}
-						</tr>
-					{/each}
-				</tbody>
-			</table>
-			{#each artists as artist}
-				{#if artist.start && artist.end}
+		<div
+			class="relative"
+			style={`height: ${stages.length * rowHeight + 60}px; min-width: ${timeSlots.length * slotWidth + 80}px`}>
+			<div class="sticky z-10 flex">
+				<div style={`width: ${timeColWidth}px`}></div>
+				{#each timeSlots as time}
 					<div
-						class={`rounded-4xl border-gray2 absolute flex flex-col items-start border-2 p-3 text-white ${getStageBg(artist.stage)}`}
-						style={getArtistStyle(artist)}>
-						<img src={artist.img} alt="Artist" class="mb-1 h-10 w-10 rounded-full object-cover" />
-						<span class="font-semibold">{artist.artist}</span>
-						<span class="text-xs text-white/80">{artist.song}</span>
+						class="border-b border-gray-300 bg-gray-100 py-2 text-center text-xs font-bold"
+						style={`width: ${slotWidth}px`}>
+						{time}
 					</div>
-				{/if}
-			{/each}
+				{/each}
+			</div>
+
+			<div class="absolute -left-5 top-8 z-10 flex flex-col">
+				{#each stages as stage, i}
+					<div
+						class="sansation-bold flex items-center justify-end border-r border-gray-400/15 bg-gray-100 pr-2 text-sm font-semibold"
+						style={`height: ${rowHeight}px; width: ${timeColWidth}px;`}>
+						{stage}
+						<span class={`ml-1 h-2 w-2 rounded-full ${getStageBg(stage)}`}></span>
+					</div>
+				{/each}
+			</div>
+
+			<div class="absolute left-[95px] right-0 top-9 z-0">
+				{#each stages as _, i}
+					<div
+						class="border-t border-gray-400/15"
+						style={`top: ${i * rowHeight + rowHeight}px; height: 0; position: absolute; width: 100%;`}>
+					</div>
+				{/each}
+			</div>
+
+			<div class="absolute top-10 ml-5" style={`left: ${timeColWidth}px;`}>
+				{#each filteredArtists as artist}
+					{#if artist.start && artist.end}
+						<div
+							class={`absolute flex items-center gap-2 rounded-full  p-3 text-white ${getStageBg(artist.stage)}`}
+							style={getHorizontalArtistStyle(artist)}>
+							<img src={artist.img} alt="Artist" class="mb-1 h-10 w-10 rounded-full object-cover" />
+							<div class="flex flex-col">
+								<h2 class="sansation-bold text-sm">{artist.artist}</h2>
+								<p class="text-xs">{artist.start} tot {artist.end}</p>
+							</div>
+						</div>
+					{/if}
+				{/each}
+			</div>
 		</div>
 	</section>
 </main>
