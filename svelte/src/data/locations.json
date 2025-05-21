@@ -1,26 +1,26 @@
 [
 	{
 		"img": "/img/locations/ponton.png",
-		"song": "Poton",
-		"artist": "Poton, Hoofdacts",
+		"title": "Poton",
+		"desc": "Poton, Hoofdacts",
 		"spotify": "https://open.spotify.com/"
 	},
 	{
 		"img": "/img/locations/the-lake.png",
-		"song": "The Lake",
-		"artist": "Onbekend Talent",
+		"title": "The Lake",
+		"desc": "Onbekend Talent",
 		"spotify": "https://open.spotify.com/"
 	},
 	{
 		"img": "/img/locations/the-club.png",
-		"song": "The Club",
-		"artist": "Theater & Stand-Up Comedy",
+		"title": "The Club",
+		"desc": "Theater & Stand-Up Comedy",
 		"spotify": "https://open.spotify.com/"
 	},
 	{
 		"img": "/img/locations/hangar.png",
-		"song": "Hangar",
-		"artist": "Non-Stop House, Techno & Dance",
+		"title": "Hangar",
+		"desc": "Non-Stop House, Techno & Dance",
 		"spotify": "https://open.spotify.com/"
 	}
 ]
