@@ -1,9 +1,14 @@
 <script>
+	import { fly } from 'svelte/transition';
 	import artists from '../../data/artists.json';
 
 	const stages = ['Poton', 'The Lake', 'The Club', 'Hangar'];
-	const timeSlots = [];
 
+	const slotWidth = 60;
+	const rowHeight = 80;
+	const timeColWidth = 100;
+
+	const timeSlots = [];
 	for (let hour = 10; hour <= 23; hour++) {
 		for (let min = 0; min < 60; min += 15) {
 			const h = hour.toString().padStart(2, '0');
@@ -12,17 +17,13 @@
 		}
 	}
 
+	let selectedDay = 'sat';
+	let selectedGenre = 'All';
+
 	function timeToMinutes(time) {
 		const [h, m] = time.split(':').map(Number);
 		return h * 60 + m;
 	}
-
-	const slotWidth = 60;
-	const rowHeight = 80;
-	const timeColWidth = 100;
-
-	let selectedDay = 'sat';
-	$: filteredArtists = artists.filter((a) => a.day === selectedDay);
 
 	function getHorizontalArtistStyle(artist) {
 		const stageIdx = stages.indexOf(artist.stage);
@@ -38,11 +39,11 @@
 		const minWidth = 40;
 
 		return `
-        top: ${top}px;
-        left: ${left}px;
-        width: ${Math.max(width, minWidth)}px;
-        height: ${rowHeight - 10}px;
-        opacity: 0.95;
+      top: ${top}px;
+      left: ${left}px;
+      width: ${Math.max(width, minWidth)}px;
+      height: ${rowHeight - 10}px;
+      opacity: 0.95;
     `;
 	}
 
@@ -56,8 +57,26 @@
 				return 'bg-saffron';
 			case 'Hangar':
 				return 'bg-purple-600';
+			default:
+				return '';
 		}
 	}
+
+	$: genres = ['All', ...new Set(artists.map((a) => a.genre).filter(Boolean))];
+
+	$: filteredArtists = artists.filter(
+		(a) => a.day === selectedDay && (selectedGenre === 'All' || a.genre === selectedGenre)
+	);
+
+	let selectedArtist = null;
+
+	const openModal = (artist) => {
+		selectedArtist = artist;
+	};
+
+	const closeModal = () => {
+		selectedArtist = null;
+	};
 </script>
 
 <main class="pb-30 flex flex-col gap-6 px-6 pt-20">
@@ -74,24 +93,38 @@
 
 	<section class="flex w-full flex-col gap-1">
 		<p class="text-sm text-gray-400">Today's May 14th</p>
-		<h1 class="sansation-bold text-xl">Events</h1>
+		<h1 class="sansation-bold text-xl">Our Events</h1>
 	</section>
 
-	<section class="mb-2 flex gap-4">
+	<section class="flex gap-4">
 		<button
-			class="sansation-bold rounded-full px-4 py-2 text-sm font-bold text-white"
+			class="sansation-bold rounded-full px-4 py-2 text-sm font-bold text-white transition-colors duration-500"
 			class:bg-vermilion={selectedDay === 'sat'}
 			class:text-white={selectedDay === 'sat'}
 			on:click={() => (selectedDay = 'sat')}>
 			Saturday
 		</button>
 		<button
-			class="sansation-bold rounded-full px-4 py-2 text-sm font-bold text-white"
+			class="sansation-bold rounded-full px-4 py-2 text-sm font-bold text-white transition-colors duration-500"
 			class:bg-vermilion={selectedDay === 'sun'}
 			class:text-white={selectedDay === 'sun'}
 			on:click={() => (selectedDay = 'sun')}>
 			Sunday
 		</button>
+	</section>
+
+	<section class="hide-scrollbar flex gap-2 overflow-hidden overflow-x-auto">
+		{#each genres as genre}
+			<button
+				class="sansation-bold rounded-full px-4 py-1 text-sm font-bold transition-colors duration-500"
+				class:bg-black={selectedGenre === genre}
+				class:text-white={selectedGenre === genre}
+				class:bg-gray-200={selectedGenre !== genre}
+				class:text-black={selectedGenre !== genre}
+				on:click={() => (selectedGenre = genre)}>
+				{genre}
+			</button>
+		{/each}
 	</section>
 
 	<section class="hide-scrollbar w-full overflow-x-auto overflow-y-hidden">
@@ -132,18 +165,41 @@
 			<div class="absolute top-10 ml-5" style={`left: ${timeColWidth}px;`}>
 				{#each filteredArtists as artist}
 					{#if artist.start && artist.end}
-						<div
-							class={`absolute flex items-center gap-2 rounded-full  p-3 text-white ${getStageBg(artist.stage)}`}
+						<button
+							on:click={() => openModal(artist)}
+							class={`absolute flex items-center gap-2 rounded-full px-4 text-left text-white ${getStageBg(artist.stage)}`}
 							style={getHorizontalArtistStyle(artist)}>
 							<img src={artist.img} alt="Artist" class="mb-1 h-10 w-10 rounded-full object-cover" />
 							<div class="flex flex-col">
 								<h2 class="sansation-bold text-sm">{artist.artist}</h2>
 								<p class="text-xs">{artist.start} tot {artist.end}</p>
 							</div>
-						</div>
+						</button>
 					{/if}
 				{/each}
 			</div>
 		</div>
 	</section>
+	<div
+		class="fixed inset-0 z-40 bg-black transition-opacity duration-500 ease-in-out"
+		class:opacity-20={selectedArtist}
+		class:opacity-0={!selectedArtist}
+		class:pointer-events-none={!selectedArtist}>
+	</div>
+	{#if selectedArtist}
+		<div
+			class="fixed inset-0 z-50 flex items-center justify-center"
+			transition:fly={{ x: 0, y: 800, duration: 500, opacity: 1 }}>
+			<div class="flex h-64 w-4/5 flex-col gap-2 overflow-y-auto rounded-3xl bg-white p-5 shadow">
+				<div class="flex items-center gap-4 pb-2">
+					<img src={selectedArtist.img} alt="" class="h-16 w-16 rounded-full object-cover" />
+					<h2 class="sansation-bold">{selectedArtist.artist}</h2>
+				</div>
+				<p class="">{selectedArtist.desc}</p>
+				<div class="mt-4 flex justify-end">
+					<button on:click={closeModal} class="">x</button>
+				</div>
+			</div>
+		</div>
+	{/if}
 </main>
