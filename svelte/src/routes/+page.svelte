@@ -10,7 +10,7 @@
 			<p class="mr-1 text-sm font-extrabold text-white">Strijkviertel, Utrecht</p>
 		</div>
 		<img
-			src="/img/logo-white-transparent.png"
+			src="/img/logos/logo-white-transparent.png"
 			alt="Logo"
 			class="h-10 w-10 rounded-full object-cover pl-0.5" />
 	</section>
