@@ -43,10 +43,10 @@
 	</section>
 
 	<section class="flex w-full flex-col">
-		<p class="sansation-bold mb-4 text-lg">Upcoming Artists</p>
+		<p class="sansation-bold mb-4 text-lg">Artist Highlights</p>
 		{#each artists.slice(0, 3) as artist}
 			<div class="pb-5.5 flex">
-				<img src={artist.img} alt="Artist" class="h-26 w-28 rounded-3xl object-cover" />
+				<img src={artist.img} alt="Artist" class="h-26 w-26 rounded-3xl object-cover" />
 				<div class="flex-col pl-4">
 					<p class="sansation-bold pt-2">{artist.song}</p>
 					<p class="text-sm text-gray-400">{artist.artist}</p>
