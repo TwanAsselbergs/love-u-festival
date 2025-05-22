@@ -1,6 +1,7 @@
 <script>
 	import { fly } from 'svelte/transition';
 	import { t } from 'svelte-i18n';
+	import { X } from 'lucide-svelte';
 	import accessibilities from '../../data/accessibilities.json';
 	import contacts from '../../data/contacts.json';
 
@@ -104,7 +105,7 @@
 								<span class="material-icons-round text-vermilion scale-150">
 									{accessibility.icon}
 								</span>
-								<p>{accessibility.title}</p>
+								<p class="">{accessibility.title}</p>
 							</button>
 						{/each}
 					</div>
@@ -291,17 +292,22 @@
 	</div>
 	{#if selectedAccessibility}
 		<div
-			class="fixed inset-0 z-50 flex items-center justify-center"
-			transition:fly={{ x: 0, y: 800, duration: 500, opacity: 1 }}>
-			<div class="flex h-64 w-4/5 flex-col gap-2 overflow-y-auto rounded-3xl bg-white p-5 shadow">
-				<div class="flex gap-4">
+			class="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center"
+			transition:fly={{ y: 400, duration: 500, opacity: 1 }}>
+			<div
+				class="hide-scrollbar relative flex max-h-[80vh] w-full flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 shadow">
+				<button
+					on:click={closeModal}
+					class="absolute right-3 top-3 rounded-full bg-gray-200 p-1 text-gray-400">
+					<X class="h-4 w-4 stroke-[4]" />
+				</button>
+				<div class="flex items-center gap-4">
 					<span class="material-icons-round text-vermilion">{selectedAccessibility.icon}</span>
-					<h2 class="">{selectedAccessibility.title}</h2>
+					<h2 class="sansation-bold">
+						Kom je met de <span class="lowercase">{selectedAccessibility.title}?</span>
+					</h2>
 				</div>
 				<p class="">{selectedAccessibility.desc}</p>
-				<div class="mt-4 flex justify-end">
-					<button on:click={closeModal} class="">x</button>
-				</div>
 			</div>
 		</div>
 	{/if}
