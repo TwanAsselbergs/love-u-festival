@@ -1,6 +1,16 @@
 <script>
+	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import artists from '../../data/artists.json';
+	import { X } from 'lucide-svelte';
+
+	$: {
+		if (selectedArtist) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+	}
 
 	const stages = ['Poton', 'The Lake', 'The Club', 'Hangar'];
 
@@ -62,7 +72,7 @@
 		}
 	}
 
-	$: genres = ['All', ...new Set(artists.map((a) => a.genre).filter(Boolean))];
+	$: genres = ['All', ...new Set(artists.map((a) => a.genre).filter((g) => g && g !== '?'))];
 
 	$: filteredArtists = artists.filter(
 		(a) => a.day === selectedDay && (selectedGenre === 'All' || a.genre === selectedGenre)
@@ -120,7 +130,7 @@
 				class:bg-black={selectedGenre === genre}
 				class:text-white={selectedGenre === genre}
 				class:bg-gray-200={selectedGenre !== genre}
-				class:text-black={selectedGenre !== genre}
+				class:text-gray-400={selectedGenre !== genre}
 				on:click={() => (selectedGenre = genre)}>
 				{genre}
 			</button>
@@ -131,7 +141,7 @@
 		<div
 			class="relative"
 			style={`height: ${stages.length * rowHeight + 60}px; min-width: ${timeSlots.length * slotWidth + 80}px`}>
-			<div class="sticky z-10 flex">
+			<div class="flex">
 				<div style={`width: ${timeColWidth}px`}></div>
 				{#each timeSlots as time}
 					<div
@@ -142,7 +152,7 @@
 				{/each}
 			</div>
 
-			<div class="absolute -left-5 top-8 z-10 flex flex-col">
+			<div class="top-8.5 absolute -left-5 flex flex-col">
 				{#each stages as stage, i}
 					<div
 						class="sansation-bold flex items-center justify-end border-r border-gray-400/15 bg-gray-100 pr-2 text-sm font-semibold"
@@ -180,6 +190,7 @@
 			</div>
 		</div>
 	</section>
+
 	<div
 		class="fixed inset-0 z-40 bg-black transition-opacity duration-500 ease-in-out"
 		class:opacity-20={selectedArtist}
@@ -188,16 +199,49 @@
 	</div>
 	{#if selectedArtist}
 		<div
-			class="fixed inset-0 z-50 flex items-center justify-center"
-			transition:fly={{ x: 0, y: 800, duration: 500, opacity: 1 }}>
-			<div class="flex h-64 w-4/5 flex-col gap-2 overflow-y-auto rounded-3xl bg-white p-5 shadow">
-				<div class="flex items-center gap-4 pb-2">
-					<img src={selectedArtist.img} alt="" class="h-16 w-16 rounded-full object-cover" />
-					<h2 class="sansation-bold">{selectedArtist.artist}</h2>
+			class="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center"
+			transition:fly={{ y: 650, duration: 500, opacity: 1 }}>
+			<div
+				class="hide-scrollbar relative flex max-h-[80vh] w-full max-w-md flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 py-10 shadow">
+				<button
+					on:click={closeModal}
+					class="absolute right-3 top-3 rounded-full bg-gray-200 p-1 text-gray-400">
+					<X class="h-4 w-4 stroke-[4]" />
+				</button>
+				<div
+					class={`mb-2 flex items-center gap-4 rounded-full p-2 px-4 ${getStageBg(selectedArtist.stage)}`}>
+					<img src={selectedArtist.img} alt="" class="h-10 w-10 rounded-full object-cover" />
+					<div class="flex-col text-white">
+						<h2 class="sansation-bold">{selectedArtist.artist}</h2>
+						<p class="">{selectedArtist.song}</p>
+					</div>
 				</div>
-				<p class="">{selectedArtist.desc}</p>
-				<div class="mt-4 flex justify-end">
-					<button on:click={closeModal} class="">x</button>
+				{#if selectedArtist.vid}
+					<iframe
+						title="YouTube"
+						src={selectedArtist.vid}
+						frameborder="0"
+						class="rounded-4xl mb-2 h-48 w-full">
+					</iframe>
+				{/if}
+				<div class="flex gap-2">
+					<span class="material-icons-round text-vermilion">info</span>
+					<p class="text-vermilion sansation-bold">Additional Information</p>
+				</div>
+				<p class="px-1 text-gray-600">{selectedArtist.desc}</p>
+				<div class="my-2 flex items-center gap-2 px-1">
+					<span class="material-icons-round text-saffron">schedule</span>
+					<p class="sansation-bold text-sm text-gray-800">{selectedArtist.date}</p>
+				</div>
+				<div class="flex items-center">
+					<div class="flex items-center gap-2 px-1">
+						<span class="material-icons-round text-saffron">festival</span>
+						<p class="font-gray-800 sansation-bold text-sm">{selectedArtist.stage}</p>
+					</div>
+					<div class="flex items-center gap-2 px-1">
+						<span class="material-icons-round text-saffron">music_note</span>
+						<p class="font-gray-800 sansation-bold text-sm">{selectedArtist.genre}</p>
+					</div>
 				</div>
 			</div>
 		</div>
