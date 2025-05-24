@@ -1,0 +1,152 @@
+[
+	{
+		"name": "Lockers",
+		"description": "Desc",
+		"smallIcon": "img/map/locker.svg",
+		"coords": [1107, 933]
+	},
+	{
+		"name": "Lockers",
+		"description": "Desc",
+		"smallIcon": "img/map/locker.svg",
+		"coords": [1045, 937]
+	},
+	{
+		"name": "Merchandise",
+		"description": "Desc",
+		"smallIcon": "img/map/merch.svg",
+		"coords": [1178, 960]
+	},
+	{
+		"name": "Merchandise",
+		"description": "Desc",
+		"smallIcon": "img/map/merch.svg",
+		"coords": [1050, 1190]
+	},
+	{
+		"name": "Merchandise",
+		"description": "Desc",
+		"smallIcon": "img/map/merch.svg",
+		"coords": [695, 1180]
+	},
+	{
+		"name": "Bar",
+		"description": "Desc",
+		"smallIcon": "img/map/bar.svg",
+		"coords": [1230, 980]
+	},
+	{
+		"name": "Bar",
+		"description": "Desc",
+		"smallIcon": "img/map/bar.svg",
+		"coords": [840, 1180]
+	},
+	{
+		"name": "Bar",
+		"description": "Desc",
+		"smallIcon": "img/map/bar.svg",
+		"coords": [627, 1250]
+	},
+	{
+		"name": "Bar",
+		"description": "Desc",
+		"smallIcon": "img/map/bar.svg",
+		"coords": [538, 1250]
+	},
+	{
+		"name": "Food",
+		"description": "Desc",
+		"smallIcon": "img/map/food.svg",
+		"coords": [1230, 1050]
+	},
+	{
+		"name": "Food",
+		"description": "Desc",
+		"smallIcon": "img/map/food.svg",
+		"coords": [996, 1160]
+	},
+	{
+		"name": "Ice Cream",
+		"description": "Desc",
+		"smallIcon": "img/map/ice-cream.svg",
+		"coords": [950, 1175]
+	},
+	{
+		"name": "Ice Cream",
+		"description": "Desc",
+		"smallIcon": "img/map/ice-cream.svg",
+		"coords": [1095, 1025]
+	},
+	{
+		"name": "Ice Cream",
+		"description": "Desc",
+		"smallIcon": "img/map/ice-cream.svg",
+		"coords": [950, 1175]
+	},
+	{
+		"name": "Ice Cream",
+		"description": "Desc",
+		"smallIcon": "img/map/ice-cream.svg",
+		"coords": [720, 1220]
+	},
+	{
+		"name": "Ice Cream",
+		"description": "Desc",
+		"smallIcon": "img/map/ice-cream.svg",
+		"coords": [520, 1300]
+	},
+	{
+		"name": "Toilet",
+		"description": "Desc",
+		"smallIcon": "img/map/toilet.svg",
+		"coords": [1271, 950]
+	},
+	{
+		"name": "Toilet",
+		"description": "Desc",
+		"smallIcon": "img/map/toilet.svg",
+		"coords": [858, 1252]
+	},
+	{
+		"name": "Toilet",
+		"description": "Desc",
+		"smallIcon": "img/map/toilet.svg",
+		"coords": [415, 1265]
+	},
+	{
+		"name": "First Aid",
+		"description": "Desc",
+		"smallIcon": "img/map/first-aid.svg",
+		"coords": [1167, 1230]
+	},
+	{
+		"name": "Ponton",
+		"description": "Main Stage, Main Acts",
+		"icon": "img/map/ponton.svg",
+		"coords": [1140, 1045]
+	},
+	{
+		"name": "The Lake",
+		"description": "Unknown Talent",
+		"icon": "img/map/the-lake.svg",
+		"coords": [810, 1145]
+	},
+	{
+		"name": "The Club",
+		"description": "Theater & Stand-Up Comedy",
+		"icon": "img/map/the-club.svg",
+		"coords": [645, 1180]
+	},
+	{
+		"name": "Hangar",
+		"description": "Non-Stop House, Techno & Dance",
+		"icon": "img/map/hangar.svg",
+		"coords": [445, 1310]
+	},
+	{
+		"name": "Entrance/Exit",
+		"description": "Desc",
+		"largeIcon": "img/map/entrance-exit.svg",
+		"coords": [657, 933]
+	}
+]
