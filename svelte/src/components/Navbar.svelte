@@ -39,7 +39,7 @@
 
 <div class="fixed bottom-6 left-1/2 z-10 w-[85%] max-w-[20rem] -translate-x-1/2 transform">
 	<div
-		class="absolute inset-0 -z-10 rounded-full bg-white/60 shadow saturate-200 backdrop-blur-lg dark:bg-black/60">
+		class="absolute inset-0 -z-10 rounded-full bg-white/80 shadow saturate-200 backdrop-blur-lg dark:bg-black/70">
 	</div>
 
 	<div class="relative flex items-center justify-center rounded-full py-2.5">
