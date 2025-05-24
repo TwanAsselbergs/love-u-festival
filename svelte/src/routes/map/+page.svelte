@@ -1,7 +1,8 @@
 <script>
-	import { t } from 'svelte-i18n';
+	import FestivalMap from '../../components/FestivalMap.svelte';
 </script>
 
-<main class="flex min-h-screen w-full items-center justify-center text-center">
-	<img src="/img/map.png" alt="Map" class="" />
+<main class="fixed inset-0 z-0 overflow-hidden">
+	<FestivalMap />
+	<img src="/img/map/legend.svg" alt="" class="absolute left-2 top-2 h-40 rounded-2xl shadow" />
 </main>
