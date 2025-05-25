@@ -1,5 +1,5 @@
 <script>
-	import FestivalMap from '../../components/FestivalMap.svelte';
+	import FestivalMap from '$lib/components/map/FestivalMap.svelte';
 </script>
 
 <main class="fixed inset-0 z-0 overflow-hidden">

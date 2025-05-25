@@ -1,9 +1,8 @@
 <script>
-	import '../app.css';
+	import '../styles/app.css';
 	import '$lib/i18ns';
-	import Navbar from '../components/Navbar.svelte';
-	import LanguageSwitcher from '../components/LanguageSwitcher.svelte';
-
+	import Navbar from '$/lib/components/layout/Navbar.svelte';
+	import LanguageSwitcher from '$/lib/components/ui/LanguageSwitcher.svelte';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import { registerSW } from 'virtual:pwa-register';

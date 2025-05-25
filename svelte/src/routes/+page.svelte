@@ -1,6 +1,6 @@
 <script>
-	import artists from '../data/artists.json';
-	import locations from '../data/locations.json';
+	import artists from '$lib/data/artists.json';
+	import locations from '$lib/data/locations.json';
 </script>
 
 <main class="pb-30 flex flex-col items-center gap-6 px-6 pt-20">
@@ -24,7 +24,7 @@
 		</button>
 
 		<p class="sansation-bold mb-4 text-lg">Festival Locations</p>
-		<div class="hide-scrollbar flex gap-4 overflow-x-auto">
+		<div class="scrollbar-hide flex gap-4 overflow-x-auto">
 			{#each locations as location}
 				<div class="w-75 flex-shrink-0">
 					<img src={location.img} alt="Hero" class="h-48 w-full rounded-3xl object-cover" />
@@ -34,7 +34,7 @@
 							<p class="text-sm text-gray-400">{location.desc}</p>
 						</div>
 						<a href={location.spotify} target="_blank" rel="noopener noreferrer">
-							<img src="/img/spotify.svg" alt="Spotify" class="mr-1 h-7 w-7" />
+							<img src="/img/logos/spotify.svg" alt="Spotify" class="mr-1 h-7 w-7" />
 						</a>
 					</div>
 				</div>

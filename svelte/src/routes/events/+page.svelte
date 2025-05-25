@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import artists from '../../data/artists.json';
 	import { X } from 'lucide-svelte';
+	import artists from '$lib/data/artists.json';
 
 	$: {
 		if (selectedArtist) {
@@ -123,7 +123,7 @@
 		</button>
 	</section>
 
-	<section class="hide-scrollbar flex gap-2 overflow-hidden overflow-x-auto">
+	<section class="scrollbar-hide flex gap-2 overflow-hidden overflow-x-auto">
 		{#each genres as genre}
 			<button
 				class="sansation-bold rounded-full px-4 py-1 text-sm font-bold transition-colors duration-500"
@@ -137,7 +137,7 @@
 		{/each}
 	</section>
 
-	<section class="hide-scrollbar w-full overflow-x-auto overflow-y-hidden">
+	<section class="scrollbar-hide w-full overflow-x-auto overflow-y-hidden">
 		<div
 			class="relative"
 			style={`height: ${stages.length * rowHeight + 60}px; min-width: ${timeSlots.length * slotWidth + 80}px`}>
@@ -202,7 +202,7 @@
 			class="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center"
 			transition:fly={{ y: 650, duration: 500, opacity: 1 }}>
 			<div
-				class="hide-scrollbar relative flex max-h-[80vh] w-full max-w-md flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 py-10 shadow">
+				class="scrollbar-hide relative flex max-h-[80vh] w-full max-w-md flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 py-10 shadow">
 				<button
 					on:click={closeModal}
 					class="absolute right-3 top-3 rounded-full bg-gray-200 p-1 text-gray-400">

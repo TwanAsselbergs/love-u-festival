@@ -2,8 +2,8 @@
 	import { fly } from 'svelte/transition';
 	import { t } from 'svelte-i18n';
 	import { X } from 'lucide-svelte';
-	import accessibilities from '../../data/accessibilities.json';
-	import contacts from '../../data/contacts.json';
+	import accessibilities from '$lib/data/accessibilities.json';
+	import contacts from '$lib/data/contacts.json';
 
 	let openSection = null;
 	let selectedAccessibility = null;
@@ -295,7 +295,7 @@
 			class="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center"
 			transition:fly={{ y: 400, duration: 500, opacity: 1 }}>
 			<div
-				class="hide-scrollbar relative flex max-h-[80vh] w-full flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 shadow">
+				class="scrollbar-hide relative flex max-h-[80vh] w-full flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 shadow">
 				<button
 					on:click={closeModal}
 					class="absolute right-3 top-3 rounded-full bg-gray-200 p-1 text-gray-400">

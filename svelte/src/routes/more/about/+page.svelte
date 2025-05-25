@@ -1,6 +1,6 @@
 <script>
 	import { t } from 'svelte-i18n';
-	import BackButton from '../../../components/BackButton.svelte';
+	import BackButton from '$lib/components/ui/BackButton.svelte';
 </script>
 
 <main class="pb-30 flex flex-col items-center gap-6 px-6 pt-20">

@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { t } from 'svelte-i18n';
-	import BackButton from '../../../components/BackButton.svelte';
+	import BackButton from '$lib/components/ui/BackButton.svelte';
 
 	let tipsEnabled = false;
 	let surveysEnabled = false;
