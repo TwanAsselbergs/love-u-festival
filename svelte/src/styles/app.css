@@ -13,14 +13,14 @@ body {
 
 @font-face {
 	font-family: 'Sansation';
-	src: url('/fonts/Sansation-Regular.ttf') format('truetype');
+	src: url('/fonts/sansation-regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'SansationBold';
-	src: url('/fonts/Sansation-Bold.ttf') format('truetype');
+	src: url('/fonts/sansation-bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: bold;
 }
@@ -30,10 +30,10 @@ body {
 		font-family: 'SansationBold';
 		font-weight: bold;
 	}
-	.hide-scrollbar::-webkit-scrollbar {
+	.scrollbar-hide::-webkit-scrollbar {
 		display: none;
 	}
-	.hide-scrollbar {
+	.scrollbar-hide {
 		-ms-overflow-style: none;
 		scrollbar-width: none;
 	}
