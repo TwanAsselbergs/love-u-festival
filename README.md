@@ -78,7 +78,7 @@ Requirements for running the website locally (in your browser).
 - Enables **offline access**, **installable app** support, and caching strategies.
 
 ### Package Manager & Runtime: Bun
-- Blazing fast alternative to npm/yarn.
+- Faster alternative to npm/yarn.
 - Handles dependencies, scripts, and server-side code efficiently.
 - Simplifies the toolchain with built-in TypeScript, bundler, and test runner.
 
