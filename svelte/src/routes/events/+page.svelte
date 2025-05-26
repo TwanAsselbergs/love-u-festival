@@ -3,6 +3,7 @@
 	import { fly } from 'svelte/transition';
 	import { X } from 'lucide-svelte';
 	import artists from '$lib/data/artists.json';
+	import { t } from 'svelte-i18n';
 
 	$: {
 		if (selectedArtist) {
@@ -87,6 +88,13 @@
 	const closeModal = () => {
 		selectedArtist = null;
 	};
+
+	function formatDate(date) {
+		const options = { month: 'long', day: 'numeric' };
+		return date.toLocaleDateString(undefined, options);
+	}
+	const today = new Date();
+	$: todayString = `${formatDate(today)}`;
 </script>
 
 <main class="pb-30 flex flex-col gap-6 px-6 pt-20">
@@ -102,8 +110,8 @@
 	</section>
 
 	<section class="flex w-full flex-col gap-1">
-		<p class="text-sm text-gray-400">Today's May 14th</p>
-		<h1 class="sansation-bold text-xl">Our Events</h1>
+		<p class="text-sm text-gray-400">{todayString}</p>
+		<h1 class="sansation-bold text-xl">{$t('events')}</h1>
 	</section>
 
 	<section class="flex gap-4">
@@ -112,18 +120,18 @@
 			class:bg-vermilion={selectedDay === 'sat'}
 			class:text-white={selectedDay === 'sat'}
 			on:click={() => (selectedDay = 'sat')}>
-			Saturday
+			{$t('saturday')}
 		</button>
 		<button
 			class="sansation-bold rounded-full px-4 py-2 text-sm font-bold text-white transition-colors duration-500"
 			class:bg-vermilion={selectedDay === 'sun'}
 			class:text-white={selectedDay === 'sun'}
 			on:click={() => (selectedDay = 'sun')}>
-			Sunday
+			{$t('sunday')}
 		</button>
 	</section>
 
-	<section class="scrollbar-hide flex gap-2 overflow-hidden overflow-x-auto">
+	<section class="scrollbar-none flex gap-2 overflow-hidden overflow-x-auto">
 		{#each genres as genre}
 			<button
 				class="sansation-bold rounded-full px-4 py-1 text-sm font-bold transition-colors duration-500"
@@ -137,7 +145,7 @@
 		{/each}
 	</section>
 
-	<section class="scrollbar-hide w-full overflow-x-auto overflow-y-hidden">
+	<section class="scrollbar-none w-full overflow-x-auto overflow-y-hidden">
 		<div
 			class="relative"
 			style={`height: ${stages.length * rowHeight + 60}px; min-width: ${timeSlots.length * slotWidth + 80}px`}>
@@ -182,7 +190,7 @@
 							<img src={artist.img} alt="Artist" class="mb-1 h-10 w-10 rounded-full object-cover" />
 							<div class="flex flex-col">
 								<h2 class="sansation-bold text-sm">{artist.artist}</h2>
-								<p class="text-xs">{artist.start} tot {artist.end}</p>
+								<p class="text-xs">{artist.start} {$t('to')} {artist.end}</p>
 							</div>
 						</button>
 					{/if}
@@ -202,7 +210,7 @@
 			class="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center"
 			transition:fly={{ y: 650, duration: 500, opacity: 1 }}>
 			<div
-				class="scrollbar-hide relative flex max-h-[80vh] w-full max-w-md flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 py-10 shadow">
+				class="scrollbar-none relative flex max-h-[80vh] w-full max-w-md flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 py-10 shadow">
 				<button
 					on:click={closeModal}
 					class="absolute right-3 top-3 rounded-full bg-gray-200 p-1 text-gray-400">
@@ -226,9 +234,9 @@
 				{/if}
 				<div class="flex gap-2">
 					<span class="material-icons-round text-vermilion">info</span>
-					<p class="text-vermilion sansation-bold">Additional Information</p>
+					<p class="text-vermilion sansation-bold">{$t('additional_information')}</p>
 				</div>
-				<p class="px-1 text-gray-600">{selectedArtist.desc}</p>
+				<p class="px-1 text-gray-600">{$t(selectedArtist.desc)}</p>
 				<div class="my-2 flex items-center gap-2 px-1">
 					<span class="material-icons-round text-saffron">schedule</span>
 					<p class="sansation-bold text-sm text-gray-800">{selectedArtist.date}</p>

@@ -58,7 +58,7 @@
 					<span
 						class="material-icons-round text-gray-300 transition-transform duration-300"
 						class:rotate-180={openSection === 'openingHours'}>
-						keyboard_arrow_down
+						expand_more
 					</span>
 				</button>
 
@@ -87,7 +87,7 @@
 					<span
 						class="material-icons-round text-gray-300 transition-transform duration-300"
 						class:rotate-180={openSection === 'accessibility'}>
-						keyboard_arrow_down
+						expand_more
 					</span>
 				</button>
 
@@ -95,7 +95,7 @@
 					class="flex flex-col gap-4 overflow-hidden px-5 transition-all duration-500 ease-in-out"
 					style="max-height: {openSection === 'accessibility' ? '300px' : '0px'}">
 					<p class="pb-2 text-gray-600 dark:text-white/70">
-						Met welk vervoer ben je van plan te komen?
+						{$t('which_transport')}
 					</p>
 					<div class="grid grid-cols-3 justify-items-center gap-12 px-4 pb-6">
 						{#each accessibilities as accessibility}
@@ -105,7 +105,7 @@
 								<span class="material-icons-round text-vermilion scale-150">
 									{accessibility.icon}
 								</span>
-								<p class="">{accessibility.title}</p>
+								<p class="">{$t(accessibility.title)}</p>
 							</button>
 						{/each}
 					</div>
@@ -123,7 +123,7 @@
 					<span
 						class="material-icons-round text-gray-300 transition-transform duration-300"
 						class:rotate-180={openSection === 'goldenGlu'}>
-						keyboard_arrow_down
+						expand_more
 					</span>
 				</button>
 
@@ -150,7 +150,7 @@
 					<span
 						class="material-icons-round text-gray-300 transition-transform duration-300"
 						class:rotate-180={openSection === 'lockers'}>
-						keyboard_arrow_down
+						expand_more
 					</span>
 				</button>
 
@@ -183,7 +183,7 @@
 					<span
 						class="material-icons-round text-gray-300 transition-transform duration-300"
 						class:rotate-180={openSection === 'medication'}>
-						keyboard_arrow_down
+						expand_more
 					</span>
 				</button>
 
@@ -210,7 +210,7 @@
 					<span
 						class="material-icons-round text-gray-300 transition-transform duration-300"
 						class:rotate-180={openSection === 'leaveFestival'}>
-						keyboard_arrow_down
+						expand_more
 					</span>
 				</button>
 
@@ -237,7 +237,7 @@
 					<span
 						class="material-icons-round text-gray-300 transition-transform duration-300"
 						class:rotate-180={openSection === 'faqLockers'}>
-						keyboard_arrow_down
+						expand_more
 					</span>
 				</button>
 
@@ -295,7 +295,7 @@
 			class="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center"
 			transition:fly={{ y: 400, duration: 500, opacity: 1 }}>
 			<div
-				class="scrollbar-hide relative flex max-h-[80vh] w-full flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 shadow">
+				class="scrollbar-none relative flex max-h-[80vh] w-full flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 shadow">
 				<button
 					on:click={closeModal}
 					class="absolute right-3 top-3 rounded-full bg-gray-200 p-1 text-gray-400">
@@ -304,10 +304,10 @@
 				<div class="flex items-center gap-4">
 					<span class="material-icons-round text-vermilion">{selectedAccessibility.icon}</span>
 					<h2 class="sansation-bold">
-						Kom je met de <span class="lowercase">{selectedAccessibility.title}?</span>
+						{$t('accessibility_modal_title', { type: $t(selectedAccessibility.title) })}
 					</h2>
 				</div>
-				<p class="">{selectedAccessibility.desc}</p>
+				<p class="">{$t(selectedAccessibility.desc)}</p>
 			</div>
 		</div>
 	{/if}
