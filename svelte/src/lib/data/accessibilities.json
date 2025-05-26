@@ -1,27 +1,27 @@
 [
 	{
 		"icon": "pedal_bike",
-		"title": "Fiets",
-		"desc": "Er is een grote gratis fietsenstalling aanwezig waar je jouw fiets de gehele dag kunt stallen."
+		"title": "access_bike_title",
+		"desc": "access_bike_desc"
 	},
 	{
 		"icon": "directions_car",
-		"title": "Auto",
-		"desc": "Je kunt een parkingticket aanschaffen. Parkeren kan op P+R Papendorp, volg hiervoor de borden 'P online ticket'. Heb je geen ticket van te voren gekocht? Dan kun je bij de parkeerwachter op locatie een parkeerticket aanschaffen (PIN ONLY). Let wel op: VOL=VOL"
+		"title": "access_car_title",
+		"desc": "access_car_desc"
 	},
 	{
 		"icon": "train",
-		"title": "OV",
-		"desc": "Kom je met het openbaar vervoer naar het festival? Plan dan je trip via de NS-app."
+		"title": "access_ov_title",
+		"desc": "access_ov_desc"
 	},
 	{
 		"icon": "airport_shuttle",
-		"title": "Shuttlebus",
-		"desc": "Vanaf Utrecht Centraal kun je onze gratis shuttlebus richting het festivalterrein pakken. Je vindt deze bus op het centraal station aan de Mineurslaan. Volg de witte bordjes met zwarte pijlen én ' ❤️ U Festival'. De bus rijdt tussen 12:00 uur & 19:00 uur richting het festival en vanaf 21:00 uur kun je weer instappen om richting het station te gaan."
+		"title": "access_shuttle_title",
+		"desc": "access_shuttle_desc"
 	},
 	{
 		"icon": "local_taxi",
-		"title": "Taxi",
-		"desc": "Navigeer naar Strijkviertel, De Meern (Utrecht). Volg de borden 'Kiss & Ride ❤️ U Festival', zodra je in de buurt bent van het festivalterrein."
+		"title": "access_taxi_title",
+		"desc": "access_taxi_desc"
 	}
 ]

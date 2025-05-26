@@ -10,7 +10,7 @@
 		"day": "sat",
 		"genre": "EDM",
 		"shortDesc": "Trance icon",
-		"desc": "Five-time “World’s No. 1 DJ” and trance icon, Armin delivers euphoric, high-energy sets that have headlined festivals from Tomorrowland to Ultra. His uplifting melodies and impeccable mixing keep crowds dancing for hours.",
+		"desc": "artist_armin_desc",
 		"vid": "https://www.youtube.com/embed/TxvpctgU_s8"
 	},
 	{
@@ -24,7 +24,7 @@
 		"day": "sat",
 		"genre": "Indie",
 		"shortDesc": "Indie rock anthems",
-		"desc": "Rotterdam-born indie rock quintet known for soaring choruses and driving guitar riffs. Hits like “Streets” and “Riddles” showcase their knack for arena-ready hooks and emotionally charged lyricism.",
+		"desc": "artist_kensington_desc",
 		"vid": "https://www.youtube.com/embed/IH77eOyV95o"
 	},
 	{
@@ -38,7 +38,7 @@
 		"day": "sat",
 		"genre": "Indie",
 		"shortDesc": "Experimental rock innovators",
-		"desc": "Experimental rock outfit from Nijmegen, blending funky grooves with angular guitar work and theatrical stagecraft. Tracks like “Witch Doctor” and “Down Town” highlight their genre-bending approach and infectious energy.",
+		"desc": "artist_destaat_desc",
 		"vid": "https://www.youtube.com/embed/0ttGgIQpAUc"
 	},
 	{
@@ -52,7 +52,7 @@
 		"day": "sat",
 		"genre": "Rock",
 		"shortDesc": "Hard-hitting rock four-piece",
-		"desc": "Utrecht’s hard-hitting rock four-piece, delivering riff-driven anthems and dynamic vocals. With a live reputation for raw intensity, they’re tailor-made for late-night Potons.",
+		"desc": "artist_navarone_desc",
 		"vid": "https://www.youtube.com/embed/EvLpaCSnc4k"
 	},
 	{
@@ -66,7 +66,7 @@
 		"day": "sat",
 		"genre": "Indie",
 		"shortDesc": "Atmospheric indie-pop",
-		"desc": "Indie-pop artist crafting atmospheric, electronic-tinged songs. Her hypnotic vocals and lush production (as heard on “Ongeveer”) create a dreamlike vibe perfect for twilight festival slots.",
+		"desc": "artist_dotan_desc",
 		"vid": "https://www.youtube.com/embed/6IlLJNmLDMg"
 	},
 	{
@@ -80,7 +80,7 @@
 		"day": "sat",
 		"genre": "Pop",
 		"shortDesc": "Candid pop songwriter",
-		"desc": "Breakthrough pop singer Froukje Veenstra combines candid lyrics with catchy, synth-driven hooks. Since her 2021 debut, she’s become a voice of her generation—ideal for mid-day festival stages.",
+		"desc": "artist_froukje_desc",
 		"vid": "https://www.youtube.com/embed/g4PlReX9e-E"
 	},
 	{
@@ -93,7 +93,7 @@
 		"stage": "The Lake",
 		"day": "sat",
 		"genre": "?",
-		"desc": "A showcase of fresh talent, Talent Set 1 highlights up-and-coming artists across genres. Held at The Lake stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_talentset_desc"
 	},
 	{
 		"img": "/img/locations/the-lake.png",
@@ -105,7 +105,7 @@
 		"stage": "The Lake",
 		"day": "sat",
 		"genre": "?",
-		"desc": "A showcase of fresh talent, Talent Set 2 highlights up-and-coming artists across genres. Held at The Lake stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_talentset_desc"
 	},
 	{
 		"img": "/img/locations/the-lake.png",
@@ -117,7 +117,7 @@
 		"stage": "The Lake",
 		"day": "sat",
 		"genre": "?",
-		"desc": "A showcase of fresh talent, Talent Set 3 highlights up-and-coming artists across genres. Held at The Lake stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_talentset_desc"
 	},
 	{
 		"img": "/img/locations/the-lake.png",
@@ -129,7 +129,7 @@
 		"stage": "The Lake",
 		"day": "sat",
 		"genre": "?",
-		"desc": "A showcase of fresh talent, Talent Set 4 highlights up-and-coming artists across genres. Held at The Lake stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_talentset_desc"
 	},
 	{
 		"img": "/img/locations/the-lake.png",
@@ -141,7 +141,7 @@
 		"stage": "The Lake",
 		"day": "sat",
 		"genre": "?",
-		"desc": "A showcase of fresh talent, Talent Set 5 highlights up-and-coming artists across genres. Held at The Lake stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_talentset_desc"
 	},
 	{
 		"img": "/img/locations/the-lake.png",
@@ -153,7 +153,7 @@
 		"stage": "The Lake",
 		"day": "sat",
 		"genre": "?",
-		"desc": "A showcase of fresh talent, Talent Set 6 highlights up-and-coming artists across genres. Held at The Lake stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_talentset_desc"
 	},
 	{
 		"img": "/img/locations/the-lake.png",
@@ -165,7 +165,7 @@
 		"stage": "The Lake",
 		"day": "sat",
 		"genre": "?",
-		"desc": "A showcase of fresh talent, Talent Set 7 highlights up-and-coming artists across genres. Held at The Lake stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_talentset_desc"
 	},
 	{
 		"img": "/img/locations/the-club.png",
@@ -177,7 +177,7 @@
 		"stage": "The Club",
 		"day": "sat",
 		"genre": "?",
-		"desc": "Start your day with rhythmic energy and vibrant moves. This dance showcase brings professional and freestyle dancers to the stage, creating an atmosphere full of motion, creativity, and crowd connection. A kinetic festival highlight for all ages."
+		"desc": "artist_dance_desc"
 	},
 	{
 		"img": "/img/locations/the-club.png",
@@ -189,7 +189,7 @@
 		"stage": "The Club",
 		"day": "sat",
 		"genre": "?",
-		"desc": "Laughter takes center stage as top comedians deliver sets full of wit, satire, and spontaneous audience moments. A perfect festival breather filled with humor and relatable fun—ideal for relaxing and recharging between music sets."
+		"desc": "artist_comedy_desc"
 	},
 	{
 		"img": "/img/locations/the-club.png",
@@ -201,7 +201,7 @@
 		"stage": "The Club",
 		"day": "sat",
 		"genre": "?",
-		"desc": "Step into thought-provoking talks led by artists, creators, and thinkers. These lectures explore topics from music to culture and beyond—an intimate way to deepen your festival experience and get inspired by fresh perspectives."
+		"desc": "artist_lecture_desc"
 	},
 	{
 		"img": "/img/locations/the-club.png",
@@ -213,7 +213,7 @@
 		"stage": "The Club",
 		"day": "sat",
 		"genre": "?",
-		"desc": "Blending storytelling, performance, and emotion, this theater session invites you into a narrative world full of drama, humor, and imagination. A powerful way to explore human stories beyond the beat of the festival."
+		"desc": "artist_theater_desc"
 	},
 	{
 		"img": "/img/locations/the-club.png",
@@ -225,7 +225,7 @@
 		"stage": "The Club",
 		"day": "sat",
 		"genre": "?",
-		"desc": "Cool down indoors with a curated film screening—ranging from indie shorts to festival-themed documentaries. Whether you're a cinephile or casual viewer, this is your chance to chill out while still soaking in the arts."
+		"desc": "artist_movie_desc"
 	},
 	{
 		"img": "/img/locations/the-club.png",
@@ -237,7 +237,7 @@
 		"stage": "The Club",
 		"day": "sat",
 		"genre": "?",
-		"desc": "Expect the unexpected with this interdisciplinary performance featuring music, movement, visuals, and more. These expressive acts break boundaries and immerse you in artistic innovation—perfect for a dynamic evening slot."
+		"desc": "artist_performance_desc"
 	},
 	{
 		"img": "/img/locations/the-club.png",
@@ -249,7 +249,7 @@
 		"stage": "The Club",
 		"day": "sat",
 		"genre": "?",
-		"desc": "End your night with wonder as the illusionist bends reality with sleight-of-hand and mind-bending tricks. A captivating experience for believers and skeptics alike—this set will have you questioning what's real long after it ends."
+		"desc": "artist_illusionist_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -261,7 +261,7 @@
 		"stage": "Hangar",
 		"day": "sat",
 		"genre": "?",
-		"desc": "Kick off the day with a high-energy DJ set featuring deep basslines and crisp transitions. Perfect for early risers ready to get into the groove and start the festival with momentum."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -273,7 +273,7 @@
 		"stage": "Hangar",
 		"day": "sat",
 		"genre": "?",
-		"desc": "This set builds the pace with layered rhythms and evolving beats. A perfect mid-morning soundscape that keeps the crowd locked into a steadily rising vibe."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -285,7 +285,7 @@
 		"stage": "Hangar",
 		"day": "sat",
 		"genre": "?",
-		"desc": "Punchy drops and crowd-pumping energy define this DJ set. Expect a combination of mainstream dance hits and underground gems to keep things unpredictable."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -297,7 +297,7 @@
 		"stage": "Hangar",
 		"day": "sat",
 		"genre": "?",
-		"desc": "Sonic storytelling takes center stage as this DJ blends genres and tempos. A journey through electronic soundscapes perfect for that early afternoon lift."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -309,7 +309,7 @@
 		"stage": "Hangar",
 		"day": "sat",
 		"genre": "?",
-		"desc": "Peak-time energy delivered with finesse. High-tempo tracks, big-room beats, and a crowd that’s ready to go all in. The dancefloor starts to surge as afternoon rolls in."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -321,7 +321,7 @@
 		"stage": "Hangar",
 		"day": "sat",
 		"genre": "?",
-		"desc": "Evening grooves meet festival hype. This DJ blends melodic buildups with hard-hitting drops, preparing the crowd for the night's energy to come."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -333,7 +333,7 @@
 		"stage": "Hangar",
 		"day": "sat",
 		"genre": "?",
-		"desc": "Golden hour sets the mood as the Hangar fills with deep tech and house textures. This is the moment where vibe and visuals sync perfectly."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -345,7 +345,7 @@
 		"stage": "Hangar",
 		"day": "sat",
 		"genre": "?",
-		"desc": "The final DJ set of the night brings thunderous bass, epic build-ups, and a closing atmosphere full of unity and adrenaline. One last dance before the lights go out."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/artists/martin-garrix.png",
@@ -358,7 +358,7 @@
 		"day": "sun",
 		"genre": "EDM",
 		"shortDesc": "EDM superstar",
-		"desc": "Broke through as a teenager with “Animals,” Martin Garrix has become one of the biggest names in EDM. His anthemic big-room tracks and stadium-sized drops make him a festival favorite across Europe.",
+		"desc": "artist_martingarrix_desc",
 		"vid": "https://www.youtube.com/embed/Zv1QV6lrc_Y"
 	},
 	{
@@ -372,7 +372,7 @@
 		"day": "sun",
 		"genre": "Metal",
 		"shortDesc": "Symphonic metal pioneers",
-		"desc": "Symphonic metal pioneers fronted by Sharon den Adel. Their cinematic soundscapes and operatic vocals (think “Ice Queen,” “Mother Earth”) translate into dramatic, visually stunning festival performances.",
+		"desc": "artist_withintemptation_desc",
 		"vid": "https://www.youtube.com/embed/iQVei5C2N4E"
 	},
 	{
@@ -386,7 +386,7 @@
 		"day": "sun",
 		"genre": "Pop",
 		"shortDesc": "Genre-blending funk-pop",
-		"desc": "A four-piece from Haarlem mixing funk, pop, rock and hip-hop. Their upbeat, genre-fluid sound on songs like “Amigo” and “In Your Arms” makes for joyous, dance-floor-friendly live shows.",
+		"desc": "artist_chefspecial_desc",
 		"vid": "https://www.youtube.com/embed/l3jRIr44lss"
 	},
 	{
@@ -400,7 +400,7 @@
 		"day": "sun",
 		"genre": "Pop",
 		"shortDesc": "Atmospheric indie-pop",
-		"desc": "Indie-pop artist crafting atmospheric, electronic-tinged songs. Her hypnotic vocals and lush production (as heard on “Ongeveer”) create a dreamlike vibe perfect for twilight festival slots.",
+		"desc": "artist_eefjedevisser_desc",
 		"vid": "https://www.youtube.com/embed/6IlLJNmLDMg"
 	},
 	{
@@ -413,7 +413,7 @@
 		"end": "10:45",
 		"stage": "The Lake",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, Talent Set 1 highlights up-and-coming artists across genres. Held at The Lake stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_talentset_desc"
 	},
 	{
 		"img": "/img/locations/the-lake.png",
@@ -425,7 +425,7 @@
 		"end": "12:45",
 		"stage": "The Lake",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, Talent Set 2 highlights up-and-coming artists across genres. Held at The Lake stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_talentset_desc"
 	},
 	{
 		"img": "/img/locations/the-lake.png",
@@ -437,7 +437,7 @@
 		"end": "14:45",
 		"stage": "The Lake",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, Talent Set 3 highlights up-and-coming artists across genres. Held at The Lake stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_talentset_desc"
 	},
 	{
 		"img": "/img/locations/the-lake.png",
@@ -449,7 +449,7 @@
 		"end": "17:15",
 		"stage": "The Lake",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, Talent Set 4 highlights up-and-coming artists across genres. Held at The Lake stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_talentset_desc"
 	},
 	{
 		"img": "/img/locations/the-lake.png",
@@ -461,7 +461,7 @@
 		"end": "19:30",
 		"stage": "The Lake",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, Talent Set 5 highlights up-and-coming artists across genres. Held at The Lake stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_talentset_desc"
 	},
 	{
 		"img": "/img/locations/the-lake.png",
@@ -473,7 +473,7 @@
 		"end": "22:15",
 		"stage": "The Lake",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, Talent Set 6 highlights up-and-coming artists across genres. Held at The Lake stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_talentset_desc"
 	},
 	{
 		"img": "/img/locations/the-club.png",
@@ -485,7 +485,7 @@
 		"end": "11:15",
 		"stage": "The Club",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, Dance highlights up-and-coming artists across genres. Held at The Club stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_dance_desc"
 	},
 	{
 		"img": "/img/locations/the-club.png",
@@ -497,7 +497,7 @@
 		"end": "12:45",
 		"stage": "The Club",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, Comedy highlights up-and-coming artists across genres. Held at The Club stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_comedy_desc"
 	},
 	{
 		"img": "/img/locations/the-club.png",
@@ -509,7 +509,7 @@
 		"end": "14:15",
 		"stage": "The Club",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, Lecture highlights up-and-coming artists across genres. Held at The Club stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_lecture_desc"
 	},
 	{
 		"img": "/img/locations/the-club.png",
@@ -521,7 +521,7 @@
 		"end": "16:15",
 		"stage": "The Club",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, Theater highlights up-and-coming artists across genres. Held at The Club stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_theater_desc"
 	},
 	{
 		"img": "/img/locations/the-club.png",
@@ -533,7 +533,7 @@
 		"end": "13:00",
 		"stage": "The Club",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, Movie highlights up-and-coming artists across genres. Held at The Club stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_movie_desc"
 	},
 	{
 		"img": "/img/locations/the-club.png",
@@ -545,7 +545,7 @@
 		"end": "21:30",
 		"stage": "The Club",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, Magic Show highlights up-and-coming artists across genres. Held at The Club stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_magic_show_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -557,7 +557,7 @@
 		"end": "10:45",
 		"stage": "Hangar",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, DJ Set 1 highlights up-and-coming artists across genres. Held at the Hangar stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -569,7 +569,7 @@
 		"end": "12:15",
 		"stage": "Hangar",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, DJ Set 2 highlights up-and-coming artists across genres. Held at the Hangar stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -581,7 +581,7 @@
 		"end": "13:15",
 		"stage": "Hangar",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, DJ Set 3 highlights up-and-coming artists across genres. Held at the Hangar stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -593,7 +593,7 @@
 		"end": "15:15",
 		"stage": "Hangar",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, DJ Set 4 highlights up-and-coming artists across genres. Held at the Hangar stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -605,7 +605,7 @@
 		"end": "16:45",
 		"stage": "Hangar",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, DJ Set 5 highlights up-and-coming artists across genres. Held at the Hangar stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -617,7 +617,7 @@
 		"end": "18:15",
 		"stage": "Hangar",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, DJ Set 6 highlights up-and-coming artists across genres. Held at the Hangar stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -629,7 +629,7 @@
 		"end": "20:45",
 		"stage": "Hangar",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, DJ Set 7 highlights up-and-coming artists across genres. Held at the Hangar stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_djset_desc"
 	},
 	{
 		"img": "/img/locations/hangar.png",
@@ -641,6 +641,6 @@
 		"end": "23:45",
 		"stage": "Hangar",
 		"day": "sun",
-		"desc": "A showcase of fresh talent, DJ Set 8 highlights up-and-coming artists across genres. Held at the Hangar stage, it's your chance to discover the festival's hidden gems before they break through. Expect surprises, raw energy, and new sounds you’ll remember."
+		"desc": "artist_djset_desc"
 	}
 ]
