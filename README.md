@@ -4,6 +4,8 @@
 ## Table of Contents
 
   - [Overview](#overview)
+  - [Installation Guide](#installation-guide)
+  - [Architecture](#architecture)_
   - [Author(s)](#authors)
   - [License](#license)
 
@@ -57,7 +59,7 @@ Requirements for running the website locally (in your browser).
    ```
 
 
-## Architecture & Tech Choices
+## Architecture
 
 ### Framework: Svelte
 - Chosen for its **reactivity**, **simplicity**, and **performance**.
