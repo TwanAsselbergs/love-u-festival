@@ -3,7 +3,7 @@
 	import { locale } from 'svelte-i18n';
 	import { slide } from 'svelte/transition';
 
-	let currentLang = 'nl';
+	let currentLang = 'en';
 	let isOpen = false;
 
 	function switchLang(lang) {
@@ -19,7 +19,7 @@
 			currentLang = savedLang;
 			locale.set(savedLang);
 		} else {
-			locale.set('nl');
+			locale.set('en');
 		}
 	});
 </script>
