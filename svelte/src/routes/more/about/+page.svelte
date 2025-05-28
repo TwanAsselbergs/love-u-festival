@@ -1,6 +1,7 @@
 <script>
 	import { t } from 'svelte-i18n';
 	import BackButton from '$lib/components/ui/BackButton.svelte';
+	import { base } from '$app/paths';
 </script>
 
 <main class="pb-30 flex flex-col items-center gap-6 px-6 pt-20">
@@ -30,7 +31,7 @@
 		<h1 class="sansation-bold text-2xl text-gray-800 dark:text-white/90">{$t('terms')}</h1>
 
 		<div class="flex w-full flex-col">
-			<a href="/more/about" class="dark:bg-gray3 rounded-t-2xl bg-white px-4 py-4">
+			<a href="{base}/more/about" class="dark:bg-gray3 rounded-t-2xl bg-white px-4 py-4">
 				<div class="relative flex gap-4">
 					<span class="material-icons-round text-vermilion">balance</span>
 					<p class="text-gray-900 dark:text-white/90">{$t('terms_conditions')}</p>
@@ -41,7 +42,7 @@
 			</a>
 
 			<a
-				href="/more/about"
+				href="{base}/more/about"
 				class="border-1 dark:bg-gray3 border-l-0 border-r-0 border-gray-400/15 bg-white px-4 py-4">
 				<div class="relative flex gap-4">
 					<span class="material-icons-round text-vermilion">shield</span>
@@ -52,7 +53,7 @@
 				</div>
 			</a>
 
-			<a href="/more/about" class="dark:bg-gray3 rounded-b-2xl bg-white px-4 py-4">
+			<a href="{base}/more/about" class="dark:bg-gray3 rounded-b-2xl bg-white px-4 py-4">
 				<div class="relative flex gap-4">
 					<span class="material-icons-round text-vermilion">assignment</span>
 					<p class="text-gray-900 dark:text-white/90">{$t('licenses')}</p>

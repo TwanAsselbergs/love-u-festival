@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { t } from 'svelte-i18n';
 	import BackButton from '$lib/components/ui/BackButton.svelte';
+	import { base, assets } from '$app/paths';
 
 	let tipsEnabled = false;
 	let surveysEnabled = false;
@@ -39,7 +40,7 @@
 				<div class="relative flex items-center justify-between gap-4">
 					<div class="flex-col">
 						<p class="text-gray-900 dark:text-white/90">{$t('tips_promotions')}</p>
-						<p class="pl-0.5 pt-1 text-sm text-gray-500 dark:text-white/90">
+						<p class="pl-0.5 pt-1 text-sm text-gray-600 dark:text-white/70">
 							{$t('tips_promotions_desc')}
 						</p>
 					</div>
@@ -61,7 +62,7 @@
 				<div class="relative flex items-center justify-between gap-4">
 					<div class="flex-col">
 						<p class="text-gray-900 dark:text-white/90">{$t('surveys')}</p>
-						<p class="pl-0.5 pt-1 text-sm text-gray-500 dark:text-white/90">
+						<p class="pl-0.5 pt-1 text-sm text-gray-600 dark:text-white/70">
 							{$t('surveys_desc')}
 						</p>
 					</div>

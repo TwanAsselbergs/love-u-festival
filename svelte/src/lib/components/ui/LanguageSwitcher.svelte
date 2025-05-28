@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { locale } from 'svelte-i18n';
 	import { slide } from 'svelte/transition';
+	import { assets } from '$app/paths';
 
 	let currentLang = 'en';
 	let isOpen = false;
@@ -26,7 +27,10 @@
 
 <div class="right-5.5 absolute top-5 z-20 pr-[0.5px]">
 	<button class="flex items-center gap-2 rounded p-2" on:click={() => (isOpen = !isOpen)}>
-		<img src={`/img/flags/${currentLang}.png`} alt={currentLang} class="h-6" />
+		<img
+			src="{assets}/img/flags/{currentLang}.png"
+			alt={currentLang}
+			class="h-6 transition-transform duration-300 active:scale-90" />
 	</button>
 </div>
 
@@ -37,13 +41,13 @@
 		<button
 			class="pb- flex w-full items-center gap-3 px-4 py-4 text-left"
 			on:click={() => switchLang('nl')}>
-			<img src="/img/flags/nl.png" alt="English" class="h-6" />
+			<img src="{assets}/img/flags/nl.png" alt="Nederlands" class="h-6" />
 			<span>Nederlands</span>
 		</button>
 		<button
 			class="flex w-full items-center gap-3 px-4 pb-4 text-left"
 			on:click={() => switchLang('en')}>
-			<img src="/img/flags/en.png" alt="English" class="h-6" />
+			<img src="{assets}/img/flags/en.png" alt="English" class="h-6" />
 			<span>English</span>
 		</button>
 	</div>

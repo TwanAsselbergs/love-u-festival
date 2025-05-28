@@ -4,6 +4,7 @@
 	import { X } from 'lucide-svelte';
 	import accessibilities from '$lib/data/accessibilities.json';
 	import contacts from '$lib/data/contacts.json';
+	import { assets, base } from '$app/paths';
 
 	let openSection = null;
 	let selectedAccessibility = null;
@@ -52,7 +53,7 @@
 					on:click={() => toggleSection('openingHours')}
 					class="flex w-full items-center justify-between px-4 py-4">
 					<div class="flex items-center gap-4">
-						<span class="material-icons-round text-vermilion">schedule</span>
+						<span class="material-icons-round text-vermilion">watch_later</span>
 						<p class="text-gray-900 dark:text-white/90">{$t('opening_hours')}</p>
 					</div>
 					<span
@@ -69,7 +70,10 @@
 						{$t('opening_hours_desc')}
 					</p>
 					<p class="pb-4 dark:text-white/90">
-						Tip: <a href="/ics/love-u-festival.ics" download class="text-cerulean underline">
+						Tip: <a
+							href="{assets}/ics/love-u-festival.ics"
+							download
+							class="text-cerulean underline">
 							{$t('opening_hours_tip')}
 						</a>
 					</p>
@@ -105,7 +109,7 @@
 								<span class="material-icons-round text-vermilion scale-150">
 									{accessibility.icon}
 								</span>
-								<p class="">{$t(accessibility.title)}</p>
+								<p class="dark:text-white/90">{$t(accessibility.title)}</p>
 							</button>
 						{/each}
 					</div>
@@ -258,7 +262,7 @@
 		</h1>
 
 		<div class="flex w-full flex-col">
-			<a href="/more/preferences" class="dark:bg-gray3 rounded-t-2xl bg-white px-4 py-4">
+			<a href="{base}/more/preferences" class="dark:bg-gray3 rounded-t-2xl bg-white px-4 py-4">
 				<div class="relative flex gap-4">
 					<span class="material-icons-round text-vermilion">settings</span>
 					<p class="text-gray-900 dark:text-white/90">{$t('preferences')}</p>
@@ -269,7 +273,7 @@
 			</a>
 
 			<a
-				href="/more/about"
+				href="{base}/more/about"
 				class="border-1 dark:bg-gray3 rounded-b-2xl border-b-0 border-l-0 border-r-0 border-gray-400/15 bg-white px-4 py-4">
 				<div class="relative flex gap-4">
 					<span class="material-icons-round text-vermilion">info</span>
@@ -295,10 +299,10 @@
 			class="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center"
 			transition:fly={{ y: 400, duration: 500, opacity: 1 }}>
 			<div
-				class="scrollbar-none relative flex max-h-[80vh] w-full flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 shadow">
+				class="scrollbar-none dark:bg-gray3 relative flex max-h-[80vh] w-full flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 shadow dark:text-white/70">
 				<button
 					on:click={closeModal}
-					class="absolute right-3 top-3 rounded-full bg-gray-200 p-1 text-gray-400">
+					class="absolute right-3 top-3 rounded-full bg-gray-200 p-1 text-gray-400 dark:bg-gray-700">
 					<X class="h-4 w-4 stroke-[4]" />
 				</button>
 				<div class="flex items-center gap-4">
@@ -307,7 +311,7 @@
 						{$t('accessibility_modal_title', { type: $t(selectedAccessibility.title) })}
 					</h2>
 				</div>
-				<p class="">{$t(selectedAccessibility.desc)}</p>
+				<p class="text-gray-600 dark:text-white/70">{$t(selectedAccessibility.desc)}</p>
 			</div>
 		</div>
 	{/if}

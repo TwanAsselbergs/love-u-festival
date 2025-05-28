@@ -4,14 +4,8 @@
 	import { X } from 'lucide-svelte';
 	import artists from '$lib/data/artists.json';
 	import { t } from 'svelte-i18n';
-
-	$: {
-		if (selectedArtist) {
-			document.body.style.overflow = 'hidden';
-		} else {
-			document.body.style.overflow = '';
-		}
-	}
+	import { browser } from '$app/environment';
+	import { assets } from '$app/paths';
 
 	const stages = ['Poton', 'The Lake', 'The Club', 'Hangar'];
 
@@ -95,6 +89,44 @@
 	}
 	const today = new Date();
 	$: todayString = `${formatDate(today)}`;
+
+	let favoritedArtists = new Set();
+
+	onMount(() => {
+		if (browser) {
+			const stored = localStorage.getItem('favoritedArtists');
+			if (stored) {
+				try {
+					const parsed = JSON.parse(stored);
+					if (Array.isArray(parsed)) {
+						favoritedArtists = new Set(parsed);
+					}
+				} catch (e) {
+					console.error('Error');
+				}
+			}
+		}
+	});
+
+	function toggleFavorite(artistName) {
+		if (favoritedArtists.has(artistName)) {
+			favoritedArtists.delete(artistName);
+		} else {
+			favoritedArtists.add(artistName);
+		}
+		if (browser) {
+			localStorage.setItem('favoritedArtists', JSON.stringify([...favoritedArtists]));
+		}
+		favoritedArtists = new Set(favoritedArtists);
+	}
+
+	$: if (browser) {
+		if (selectedArtist) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+	}
 </script>
 
 <main class="pb-30 flex flex-col gap-6 px-6 pt-20">
@@ -104,14 +136,14 @@
 			<p class="mr-1 text-sm font-extrabold text-white">Strijkviertel, Utrecht</p>
 		</div>
 		<img
-			src="/img/logos/logo-white-transparent.png"
+			src="{assets}/img/logos/logo-white-transparent.png"
 			alt="Logo"
 			class="h-10 w-10 rounded-full object-cover pl-0.5" />
 	</section>
 
 	<section class="flex w-full flex-col gap-1">
 		<p class="text-sm text-gray-400">{todayString}</p>
-		<h1 class="sansation-bold text-xl">{$t('events')}</h1>
+		<h1 class="sansation-bold text-xl text-gray-800 dark:text-white/90">{$t('events')}</h1>
 	</section>
 
 	<section class="flex gap-4">
@@ -119,6 +151,7 @@
 			class="sansation-bold rounded-full px-4 py-2 text-sm font-bold text-white transition-colors duration-500"
 			class:bg-vermilion={selectedDay === 'sat'}
 			class:text-white={selectedDay === 'sat'}
+			class:dark:text-gray-500={selectedDay === 'sun'}
 			on:click={() => (selectedDay = 'sat')}>
 			{$t('saturday')}
 		</button>
@@ -126,6 +159,7 @@
 			class="sansation-bold rounded-full px-4 py-2 text-sm font-bold text-white transition-colors duration-500"
 			class:bg-vermilion={selectedDay === 'sun'}
 			class:text-white={selectedDay === 'sun'}
+			class:dark:text-gray-500={selectedDay === 'sat'}
 			on:click={() => (selectedDay = 'sun')}>
 			{$t('sunday')}
 		</button>
@@ -134,7 +168,7 @@
 	<section class="scrollbar-none flex gap-2 overflow-hidden overflow-x-auto">
 		{#each genres as genre}
 			<button
-				class="sansation-bold rounded-full px-4 py-1 text-sm font-bold transition-colors duration-500"
+				class="sansation-bold dark:bg-gray3 rounded-full px-4 py-1 text-sm font-bold transition-colors duration-500"
 				class:bg-black={selectedGenre === genre}
 				class:text-white={selectedGenre === genre}
 				class:bg-gray-200={selectedGenre !== genre}
@@ -153,7 +187,7 @@
 				<div style={`width: ${timeColWidth}px`}></div>
 				{#each timeSlots as time}
 					<div
-						class="border-b border-gray-300 bg-gray-100 py-2 text-center text-xs font-bold"
+						class="border-b border-gray-300 bg-gray-100 py-2 text-center text-xs font-bold dark:bg-[#1d1d1e] dark:text-gray-400"
 						style={`width: ${slotWidth}px`}>
 						{time}
 					</div>
@@ -163,7 +197,7 @@
 			<div class="top-8.5 absolute -left-5 flex flex-col">
 				{#each stages as stage, i}
 					<div
-						class="sansation-bold flex items-center justify-end border-r border-gray-400/15 bg-gray-100 pr-2 text-sm font-semibold"
+						class="sansation-bold flex items-center justify-end border-r border-gray-400/15 bg-gray-100 pr-2 text-sm font-semibold dark:bg-[#1d1d1e] dark:text-gray-400"
 						style={`height: ${rowHeight}px; width: ${timeColWidth}px;`}>
 						{stage}
 						<span class={`ml-1 h-2 w-2 rounded-full ${getStageBg(stage)}`}></span>
@@ -183,16 +217,28 @@
 			<div class="absolute top-10 ml-5" style={`left: ${timeColWidth}px;`}>
 				{#each filteredArtists as artist}
 					{#if artist.start && artist.end}
-						<button
+						<div
 							on:click={() => openModal(artist)}
-							class={`absolute flex items-center gap-2 rounded-full px-4 text-left text-white ${getStageBg(artist.stage)}`}
+							class={`absolute flex cursor-pointer items-center gap-2 rounded-full px-4 text-left text-white ${getStageBg(artist.stage)}`}
+							role
 							style={getHorizontalArtistStyle(artist)}>
-							<img src={artist.img} alt="Artist" class="mb-1 h-10 w-10 rounded-full object-cover" />
-							<div class="flex flex-col">
-								<h2 class="sansation-bold text-sm">{artist.artist}</h2>
-								<p class="text-xs">{artist.start} {$t('to')} {artist.end}</p>
+							<img
+								src="{assets}{artist.img}"
+								alt="Artist"
+								class="mb-1 h-10 w-10 rounded-full object-cover" />
+							<div class="flex w-full items-center justify-between">
+								<div class="flex flex-col">
+									<h2 class="sansation-bold text-sm">{artist.artist}</h2>
+									<p class="text-xs">{artist.start} {$t('to')} {artist.end}</p>
+								</div>
+								<button
+									type="button"
+									on:click|stopPropagation={() => toggleFavorite(artist.artist)}
+									class="material-icons-round scale-80 text-white transition-transform duration-300 active:scale-75">
+									{favoritedArtists?.has(artist.artist) ? 'favorite' : 'favorite_border'}
+								</button>
 							</div>
-						</button>
+						</div>
 					{/if}
 				{/each}
 			</div>
@@ -210,15 +256,18 @@
 			class="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center"
 			transition:fly={{ y: 650, duration: 500, opacity: 1 }}>
 			<div
-				class="scrollbar-none relative flex max-h-[80vh] w-full max-w-md flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 py-10 shadow">
+				class="scrollbar-none dark:bg-gray3 relative flex max-h-[80vh] w-full max-w-md flex-col gap-2 overflow-y-auto rounded-t-3xl bg-white p-5 py-10 shadow dark:text-white/70">
 				<button
 					on:click={closeModal}
-					class="absolute right-3 top-3 rounded-full bg-gray-200 p-1 text-gray-400">
+					class="absolute right-3 top-3 rounded-full bg-gray-200 p-1 text-gray-400 dark:bg-gray-700">
 					<X class="h-4 w-4 stroke-[4]" />
 				</button>
 				<div
 					class={`mb-2 flex items-center gap-4 rounded-full p-2 px-4 ${getStageBg(selectedArtist.stage)}`}>
-					<img src={selectedArtist.img} alt="" class="h-10 w-10 rounded-full object-cover" />
+					<img
+						src="{assets}{selectedArtist.img}"
+						alt=""
+						class="h-10 w-10 rounded-full object-cover" />
 					<div class="flex-col text-white">
 						<h2 class="sansation-bold">{selectedArtist.artist}</h2>
 						<p class="">{selectedArtist.song}</p>
@@ -229,26 +278,32 @@
 						title="YouTube"
 						src={selectedArtist.vid}
 						frameborder="0"
-						class="rounded-4xl mb-2 h-48 w-full">
+						class="rounded-4xl mb-2 h-48 w-full shadow">
 					</iframe>
 				{/if}
 				<div class="flex gap-2">
 					<span class="material-icons-round text-vermilion">info</span>
-					<p class="text-vermilion sansation-bold">{$t('additional_information')}</p>
+					<p class="text-vermilion sansation-bold dark:text-gray">{$t('additional_information')}</p>
 				</div>
-				<p class="px-1 text-gray-600">{$t(selectedArtist.desc)}</p>
+				<p class="px-1 text-gray-600 dark:text-white/70">{$t(selectedArtist.desc)}</p>
 				<div class="my-2 flex items-center gap-2 px-1">
-					<span class="material-icons-round text-saffron">schedule</span>
-					<p class="sansation-bold text-sm text-gray-800">{selectedArtist.date}</p>
+					<span class="material-icons-round text-saffron">watch_later</span>
+					<p class="sansation-bold dark:text text-sm text-gray-800 dark:text-white/90">
+						{selectedArtist.date}
+					</p>
 				</div>
 				<div class="flex items-center">
 					<div class="flex items-center gap-2 px-1">
 						<span class="material-icons-round text-saffron">festival</span>
-						<p class="font-gray-800 sansation-bold text-sm">{selectedArtist.stage}</p>
+						<p class="sansation-bold text-sm text-gray-800 dark:text-white/90">
+							{selectedArtist.stage}
+						</p>
 					</div>
 					<div class="flex items-center gap-2 px-1">
 						<span class="material-icons-round text-saffron">music_note</span>
-						<p class="font-gray-800 sansation-bold text-sm">{selectedArtist.genre}</p>
+						<p class="sansation-bold text-sm text-gray-800 dark:text-white/90">
+							{selectedArtist.genre}
+						</p>
 					</div>
 				</div>
 			</div>

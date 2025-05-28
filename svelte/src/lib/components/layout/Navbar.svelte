@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount, tick } from 'svelte';
+	import { base } from '$app/paths';
 
 	const navItems = [
 		{ href: '/', icon: 'home', name: 'Home' },
@@ -12,10 +13,18 @@
 	let itemRefs = new Array(navItems.length).fill(null);
 	let indicatorStyle = '';
 
+	function stripBase(path) {
+		return base && path.startsWith(base) ? path.slice(base.length) || '/' : path;
+	}
+
 	async function updateIndicator() {
 		await tick();
-		const activeHref = $page.url.pathname;
-		const index = navItems.findIndex((item) => item.href === activeHref);
+		const activeHref = stripBase($page.url.pathname);
+		const index = navItems.findIndex((item) =>
+			item.href === '/more'
+				? activeHref === '/more' || activeHref.startsWith('/more/')
+				: item.href === activeHref
+		);
 		if (itemRefs[index]) {
 			const el = itemRefs[index];
 			const rect = el.getBoundingClientRect();
@@ -27,7 +36,7 @@
 	}
 
 	function isActive(navItem) {
-		const path = $page.url.pathname;
+		const path = stripBase($page.url.pathname);
 		if (navItem.href === '/more') {
 			return path === '/more' || path.startsWith('/more/');
 		}
@@ -50,7 +59,7 @@
 
 		{#each navItems as navItem, i}
 			<a
-				href={navItem.href}
+				href="{base}{navItem.href}"
 				bind:this={itemRefs[i]}
 				class={`w-18 relative z-10 flex flex-col items-center justify-center rounded-full py-1
             ${isActive(navItem) ? 'text-vermilion' : 'text-gray-500 dark:text-white/50'}`}>
