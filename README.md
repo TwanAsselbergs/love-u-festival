@@ -26,6 +26,8 @@ Love U Festival is an individual school project for a fictional company named Lo
 
 ## Installation Guide
 
+![qr](https://github.com/user-attachments/assets/5b74ea41-ffa7-4b6f-ae91-93309b0f1d15)
+
 To get started with this project locally, follow these steps:
 
 ### Prerequisites
