@@ -4,11 +4,14 @@
 	"welcome": "Welkom, Student!",
 	"search_placeholder": "Zoek op locatie of evenement",
 	"festival_locations": "Festival Locaties",
-	"upcoming_artists": "Aankomende Artiesten",
-	"see_schedule": "Bekijk schema",
+	"upcoming_artists": "Opkomende Artiesten",
+	"see_schedule": "Bekijk events",
 	"news": "Nieuws",
 	"show_more": "Meer tonen",
 	"show_less": "Minder tonen",
+
+	"poton_desc": "Main Stage, Hoofdacts",
+	"the_lake_desc": "Onbekend Talent",
 
 	"news_title_1": "Line-up Hoofdpodium Bekend!",
 	"news_desc_1": "Bekijk de artiesten die dit jaar op het hoofdpodium staan.",

@@ -5,10 +5,13 @@
 	"search_placeholder": "Search by location or event",
 	"festival_locations": "Festival Locations",
 	"upcoming_artists": "Upcoming Artists",
-	"see_schedule": "See schedule",
+	"see_schedule": "See events",
 	"news": "News",
 	"show_more": "Show more",
 	"show_less": "Show less",
+
+	"poton_desc": "Main Stage, Main Acts",
+	"the_lake_desc": "Unknown Talent",
 
 	"news_title_1": "Main Stage Lineup Announced!",
 	"news_desc_1": "Check out the artists performing on the main stage this year.",

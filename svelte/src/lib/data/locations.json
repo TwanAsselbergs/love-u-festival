@@ -2,13 +2,13 @@
 	{
 		"img": "/img/locations/poton.png",
 		"title": "Poton",
-		"desc": "Main Stage, Hoofdacts",
+		"desc": "poton_desc",
 		"spotify": "https://open.spotify.com/"
 	},
 	{
 		"img": "/img/locations/the-lake.png",
 		"title": "The Lake",
-		"desc": "Onbekend Talent",
+		"desc": "the_lake_desc",
 		"spotify": "https://open.spotify.com/"
 	},
 	{
