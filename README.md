@@ -26,7 +26,7 @@ Love U Festival is an individual school project for a fictional company named Lo
 
 ## Installation Guide
 
-Scan the QR Code below:
+Scan the QR Code below to head over to the app installation page:
 
 ![frame](https://github.com/user-attachments/assets/d3eaccb5-0437-4689-8053-88b38ba24bec)
 
