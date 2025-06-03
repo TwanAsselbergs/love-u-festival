@@ -4,7 +4,7 @@
 ## Table of Contents
 
   - [Overview](#overview)
-  - [Installation Guide](#installation-guide)
+  - [Installation](#installation)
   - [Architecture](#architecture)
   - [Author(s)](#authors)
   - [License](#license)
@@ -24,7 +24,7 @@ Love U Festival is an individual school project for a fictional company named Lo
    - Contains all the documents of this project.
 
 
-## Installation Guide
+## Installation
 
 Scan the QR Code below to head over to the app installation page:
 
