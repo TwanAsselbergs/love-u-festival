@@ -30,6 +30,14 @@ Scan the QR Code below to head over to the app installation page:
 
 ![frame](https://github.com/user-attachments/assets/d3eaccb5-0437-4689-8053-88b38ba24bec)
 
+Install button not working?
+
+1. Tap the menu icon (share icon on iOS).
+
+2. Choose "Add to Home screen" from the dropdown options.
+
+3. A prompt will appear asking if you’d like to install the app — select the "Install" button to install the app to your phone.
+
 Or get started with this project locally. Follow these steps:
 
 ### Prerequisites
