@@ -7,6 +7,7 @@
 	import { assets } from '$app/paths';
 
 	let map;
+	let userMarker;
 	const bounds = [
 		[0, 0],
 		[1596, 2242]
@@ -14,6 +15,23 @@
 
 	function getArtistsForStage(stageName) {
 		return artists.filter((a) => a.stage === stageName);
+	}
+
+	function getInitialUserCoords() {
+		return [bounds[1][0] - 1275, (bounds[0][1] + bounds[1][1]) / 2];
+	}
+
+	function updateUserMarker(L, coords) {
+		if (userMarker) {
+			userMarker.setLatLng(coords);
+		} else {
+			userMarker = L.marker(coords, {
+				icon: L.icon({
+					iconUrl: `${assets}/img/map/gps.png`,
+					iconSize: [25, 25]
+				})
+			}).addTo(map);
+		}
 	}
 
 	$: translate = $t;
@@ -79,15 +97,23 @@
 			}
 			L.marker(coords, markerOptions).addTo(map).bindPopup(popupContent);
 		});
+
+		const initialCoords = getInitialUserCoords();
+		updateUserMarker(L, initialCoords);
+
+		if ('geolocation' in navigator) {
+			navigator.geolocation.watchPosition(
+				(pos) => {
+					const { latitude, longitude } = pos.coords;
+					const x = bounds[1][0] - 40 - (latitude % 0.0005) * 40000;
+					const y = (longitude % 1) * (bounds[1][1] - bounds[0][1]) + bounds[0][1];
+					updateUserMarker(L, [x, y]);
+				},
+				() => {},
+				{ enableHighAccuracy: true }
+			);
+		}
 	});
 </script>
-
-<svelte:head>
-	<link
-		rel="stylesheet"
-		href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-		crossorigin="" />
-</svelte:head>
 
 <div id="map" class="fixed inset-0 h-screen w-screen"></div>
