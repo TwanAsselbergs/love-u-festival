@@ -48,25 +48,31 @@ Requirements for running the website locally (in your browser).
 
 ### Installation Steps
 
-1. Clone the repository and navigate to the project folder:
+1. Clone the repository:
 
    ```
    git clone https://github.com/TwanAsselbergs/love-u-festival.git
+   ```
+
+2. Navigate to the project folder:
+
+   ```
    cd svelte
    ```
 
-2. Inside /svelte, install dependencies:
+4. Inside /svelte, install dependencies:
 
    ```bash
    bun i
    ```
 
-3. Inside /svelte, run the development server:
+5. Inside /svelte, run the development server:
 
    ```bash
    bun run dev
    ```
-
+   
+6. Your project should be up and running!
 
 ## Architecture
 
