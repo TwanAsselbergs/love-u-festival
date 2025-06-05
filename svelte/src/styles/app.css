@@ -13,13 +13,13 @@ body {
 
 @font-face {
 	font-family: 'Sansation';
-	src: url('/love-u-festival/fonts/sansation-regular.ttf') format('truetype');
+	src: url('/fonts/sansation-regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'SansationBold';
-	src: url('/love-u-festival/fonts/sansation-bold.ttf') format('truetype');
+	src: url('/fonts/sansation-bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: bold;
 }
@@ -35,6 +35,9 @@ body {
 	.scrollbar-none {
 		-ms-overflow-style: none;
 		scrollbar-width: none;
+	}
+	.icon-lg {
+		font-size: 10rem !important;
 	}
 }
 
