@@ -165,7 +165,7 @@
 		</button>
 	</section>
 
-	<section class="scrollbar-none flex gap-2 overflow-hidden overflow-x-auto">
+	<section class="scrollbar-none -mx-6 flex gap-2 overflow-hidden overflow-x-auto px-6">
 		{#each genres as genre}
 			<button
 				class="sansation-bold dark:bg-gray3 rounded-full px-4 py-1 text-sm font-bold transition-colors duration-500"
@@ -179,7 +179,7 @@
 		{/each}
 	</section>
 
-	<section class="scrollbar-none w-full overflow-x-auto overflow-y-hidden">
+	<section class="scrollbar-none -mx-6 overflow-x-auto overflow-y-hidden px-6">
 		<div
 			class="relative"
 			style={`height: ${stages.length * rowHeight + 60}px; min-width: ${timeSlots.length * slotWidth + 80}px`}>
@@ -194,11 +194,11 @@
 				{/each}
 			</div>
 
-			<div class="top-8.5 absolute -left-5 flex flex-col">
+			<div class="top-8.5 absolute -left-8 flex flex-col">
 				{#each stages as stage, i}
 					<div
 						class="sansation-bold flex items-center justify-end border-r border-gray-400/15 bg-gray-100 pr-2 text-sm font-semibold dark:bg-[#1d1d1e] dark:text-gray-400"
-						style={`height: ${rowHeight}px; width: ${timeColWidth}px;`}>
+						style={`height: ${rowHeight}px; width: ${timeColWidth}px; position: sticky; left: 0; z-index: 20;`}>
 						{stage}
 						<span class={`ml-1 h-2 w-2 rounded-full ${getStageBg(stage)}`}></span>
 					</div>

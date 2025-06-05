@@ -60,7 +60,7 @@
 		<p class="sansation-bold mb-4 text-lg text-gray-800 dark:text-white/90">
 			{$t('festival_locations')}
 		</p>
-		<div class="scrollbar-none flex gap-4 overflow-x-auto">
+		<div class="scrollbar-none -mx-6 flex gap-4 overflow-x-auto px-6">
 			{#each locations as location}
 				<div class="w-75 flex-shrink-0">
 					<img
