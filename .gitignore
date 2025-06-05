@@ -16,7 +16,7 @@ build/
 .vercel
 .netlify
 .wrangler
-svelte/.svelte-kit
+.svelte-kit
 
 # Logs
 logs/
@@ -39,5 +39,3 @@ vite.config.ts.timestamp-*
 
 # Miscellaneous
 *.local
-
-notes.txt
