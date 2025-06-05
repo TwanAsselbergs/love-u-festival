@@ -34,7 +34,7 @@ Install button not working?
 
 1. Tap the menu icon (share icon on iOS).
 
-2. Choose "Add to Home screen" from the dropdown options.
+2. Choose "Add to Home Screen" from the dropdown options.
 
 3. A prompt will appear asking if you’d like to install the app — select the "Install" button to install the app to your phone.
 
