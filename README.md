@@ -32,7 +32,7 @@ Scan the QR Code below to head over to the app installation page:
 
 QR Code or Install button not working?
 
-1. Go to [https://love-u-festival.twanasselbergs.com](https://love-u-festival.twanasselbergs.com)
+1. Go to [love-u-festival.twanasselbergs.com](https://love-u-festival.twanasselbergs.com)
 
 2. Tap the menu icon (share icon on iOS).
 
