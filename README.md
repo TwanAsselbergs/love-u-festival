@@ -30,13 +30,15 @@ Scan the QR Code below to head over to the app installation page:
 
 ![frame](https://github.com/user-attachments/assets/d3eaccb5-0437-4689-8053-88b38ba24bec)
 
-Install button not working?
+QR Code or Install button not working?
 
-1. Tap the menu icon (share icon on iOS).
+1. Go to [https://love-u-festival.twanasselbergs.com](https://love-u-festival.twanasselbergs.com)
 
-2. Choose "Add to Home Screen" from the dropdown options.
+2. Tap the menu icon (share icon on iOS).
 
-3. A prompt will appear asking if you’d like to install the app — select the "Install" button to install the app to your phone.
+3. Choose "Add to Home Screen" from the dropdown options.
+
+4. A prompt will appear asking if you’d like to install the app — select the "Install" button to install the app to your phone.
 
 Or get started with this project locally. Follow these steps:
 
